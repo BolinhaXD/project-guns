@@ -1,7 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://rkugclrvmaee"]
+[gd_scene load_steps=7 format=3 uid="uid://rkugclrvmaee"]
 
-[ext_resource type="Texture2D" uid="uid://btuusmneawt4r" path="res://Assets/Sprites/Character.png" id="1_6cd4h"]
 [ext_resource type="Script" uid="uid://1o7k86oksv3c" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
+[ext_resource type="Texture2D" uid="uid://de7sh8djanxkj" path="res://Assets/Sprites/v-taper character 32bit idle animation (2).png" id="2_7dd06"]
+
+[sub_resource type="Animation" id="Animation_38rej"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agent Animator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.8, 1, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(0, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(64, 0, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_t1xgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agent Animator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_23lac"]
+_data = {
+&"RESET": SubResource("Animation_t1xgp"),
+&"idle": SubResource("Animation_38rej")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dd06"]
 
@@ -16,12 +55,18 @@ zoom = Vector2(4, 4)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Agent Animator"]
 root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_23lac")
+}
+autoplay = "idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="Agent Animator"]
-position = Vector2(0.50000006, -15.499999)
-scale = Vector2(0.515625, 0.48437503)
-texture = ExtResource("1_6cd4h")
+position = Vector2(-0.03380871, -14.613539)
+scale = Vector2(0.9098057, 0.97469723)
+texture = ExtResource("2_7dd06")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -15.499999)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_7dd06")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuis03rl07mo7"
-path="res://.godot/imported/v-taper character 32bit jump animation (1).png-c1b49c7c0377d436b56ea67b62dcf9bb.ctex"
+uid="uid://bl2sye04w7ium"
+path="res://.godot/imported/v-taper character 32bit jump animation.png-9ea452630c84f2da702d180d090578f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/v-taper character 32bit jump animation (1).png"
-dest_files=["res://.godot/imported/v-taper character 32bit jump animation (1).png-c1b49c7c0377d436b56ea67b62dcf9bb.ctex"]
+source_file="res://Assets/Sprites/v-taper character 32bit jump animation.png"
+dest_files=["res://.godot/imported/v-taper character 32bit jump animation.png-9ea452630c84f2da702d180d090578f5.ctex"]
 
 [params]
 

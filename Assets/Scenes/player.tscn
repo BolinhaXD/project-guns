@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://rkugclrvmaee"]
+[gd_scene load_steps=14 format=3 uid="uid://rkugclrvmaee"]
 
 [ext_resource type="Script" uid="uid://1o7k86oksv3c" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Texture2D" uid="uid://de7sh8djanxkj" path="res://Assets/Sprites/v-taper character 32bit idle animation (2).png" id="2_7dd06"]
 [ext_resource type="Script" uid="uid://gpqnl5eyiswe" path="res://Assets/Scripts/player_animator.gd" id="2_23lac"]
 [ext_resource type="Texture2D" uid="uid://eluherd5p2hd" path="res://Assets/Sprites/v-taper character 32bit run animation.png" id="3_38rej"]
 [ext_resource type="Texture2D" uid="uid://bl2sye04w7ium" path="res://Assets/Sprites/v-taper character 32bit jump animation.png" id="5_w3t24"]
+[ext_resource type="PackedScene" uid="uid://phfsln60wlx4" path="res://Assets/Scenes/hand.tscn" id="6_w3t24"]
 
 [sub_resource type="Animation" id="Animation_t1xgp"]
 length = 0.001
@@ -31,6 +32,34 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("2_7dd06")]
+}
+
+[sub_resource type="Animation" id="Animation_lerqx"]
+resource_name = "fall"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agent Animator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 32, 32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Agent Animator/Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_w3t24")]
 }
 
 [sub_resource type="Animation" id="Animation_38rej"]
@@ -63,36 +92,6 @@ tracks/1/keys = {
 "values": [ExtResource("2_7dd06")]
 }
 
-[sub_resource type="Animation" id="Animation_23lac"]
-resource_name = "move"
-length = 1.6
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Agent Animator/Sprite2D:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(128, 0, 32, 32), Rect2(160, 0, 32, 32), Rect2(192, 0, 32, 32), Rect2(224, 0, 32, 32), Rect2(0, 0, 32, 32)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Agent Animator/Sprite2D:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_38rej")]
-}
-
 [sub_resource type="Animation" id="Animation_c3tg1"]
 resource_name = "jump"
 step = 0.1
@@ -121,20 +120,22 @@ tracks/1/keys = {
 "values": [ExtResource("5_w3t24")]
 }
 
-[sub_resource type="Animation" id="Animation_lerqx"]
-resource_name = "fall"
+[sub_resource type="Animation" id="Animation_23lac"]
+resource_name = "move"
+length = 1.6
+loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Agent Animator/Sprite2D:region_rect")
-tracks/0/interp = 1
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Rect2(0, 32, 32, 32)]
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(96, 0, 32, 32), Rect2(128, 0, 32, 32), Rect2(160, 0, 32, 32), Rect2(192, 0, 32, 32), Rect2(224, 0, 32, 32), Rect2(0, 0, 32, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -146,7 +147,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_w3t24")]
+"values": [ExtResource("3_38rej")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_23lac"]
@@ -191,3 +192,19 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_7dd06")
+
+[node name="Marker2DRight" type="Marker2D" parent="."]
+position = Vector2(10, -18)
+
+[node name="Marker2DLeft" type="Marker2D" parent="."]
+position = Vector2(-10, -18)
+
+[node name="RightHand" parent="." node_paths=PackedStringArray("pivot", "player_controller") instance=ExtResource("6_w3t24")]
+position = Vector2(10, -18)
+pivot = NodePath("../Marker2DRight")
+player_controller = NodePath("..")
+
+[node name="LeftHand" parent="." node_paths=PackedStringArray("pivot", "player_controller") instance=ExtResource("6_w3t24")]
+position = Vector2(-10, -18)
+pivot = NodePath("../Marker2DLeft")
+player_controller = NodePath("..")

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://06k5qbhvg0st"]
+
+[node name="Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0.49019608)
+custom_minimum_size = Vector2(70, 70)
+offset_right = 70.0
+offset_bottom = 70.0

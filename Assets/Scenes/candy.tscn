@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://25yi5gvsfuab"]
+
+[ext_resource type="Texture2D" uid="uid://du10runh8ovii" path="res://Assets/Sprites/candy coin.png" id="1_duvtk"]
+[ext_resource type="Script" uid="uid://boas7dx420dic" path="res://Assets/Scripts/candy.gd" id="2_pco27"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pco27"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj0ku"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6hql"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmkje"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aav5y"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c54n6"]
+atlas = ExtResource("1_duvtk")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0a2qj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pco27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj0ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6hql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmkje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aav5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c54n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_obf7d"]
+radius = 8.0
+
+[node name="Candy" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0a2qj")
+autoplay = "default"
+frame_progress = 0.036965005
+script = ExtResource("2_pco27")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_obf7d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -6,9 +6,9 @@ extends Node2D
 const reach = 12
 
 func _process(_delta: float) -> void:
+	look_at(player_controller.get_local_mouse_position())
 	var center = Vector2(pivot.position.x, pivot.position.y)
 	var distance_to_mouse = center.distance_to(player_controller.get_local_mouse_position())
-	print(center, distance_to_mouse)
 	
 	if distance_to_mouse > reach:
 		var vetor_direcao = -Vector2(center - player_controller.get_local_mouse_position())

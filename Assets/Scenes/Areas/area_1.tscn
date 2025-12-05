@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://cqfhwa1xlyt07"]
+[gd_scene load_steps=9 format=4 uid="uid://cqfhwa1xlyt07"]
 
 [ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Sprites/Blue brick wall.png" id="1_uidp5"]
 [ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/player.tscn" id="2_3uyhe"]
+[ext_resource type="Resource" uid="uid://bxsak6lhvvdxq" path="res://Assets/Scripts/inventory/playerInventory.tres" id="3_7fk0h"]
+[ext_resource type="PackedScene" uid="uid://25yi5gvsfuab" path="res://Assets/Scenes/candy.tscn" id="3_8wi1m"]
+[ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/item.tscn" id="5_nlyig"]
+[ext_resource type="Resource" uid="uid://ci7iavm0tf5uy" path="res://Assets/Scripts/inventory/items/revolver/revolver.tres" id="6_msn23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3uyhe"]
 texture = ExtResource("1_uidp5")
@@ -51,4 +55,23 @@ tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA
 tile_set = SubResource("TileSet_8wi1m")
 
 [node name="Player" parent="." instance=ExtResource("2_3uyhe")]
-position = Vector2(7, 0)
+position = Vector2(-50, 0)
+inventory = ExtResource("3_7fk0h")
+
+[node name="Candy group" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" parent="Candy group" instance=ExtResource("3_8wi1m")]
+position = Vector2(43, -35)
+
+[node name="AnimatedSprite2D2" parent="Candy group" instance=ExtResource("3_8wi1m")]
+position = Vector2(25, -17)
+
+[node name="AnimatedSprite2D3" parent="Candy group" instance=ExtResource("3_8wi1m")]
+position = Vector2(43, -17)
+
+[node name="AnimatedSprite2D4" parent="Candy group" instance=ExtResource("3_8wi1m")]
+position = Vector2(61, -17)
+
+[node name="Sprite2D" parent="." instance=ExtResource("5_nlyig")]
+position = Vector2(-131, -24)
+item_info = ExtResource("6_msn23")

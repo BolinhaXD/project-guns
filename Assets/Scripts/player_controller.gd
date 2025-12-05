@@ -1,5 +1,4 @@
-extends CharacterBody2D
-class_name PlayerController
+class_name PlayerController extends CharacterBody2D
 
 @export var speed = 7.0
 @export var jump_power = 8.0
@@ -7,6 +6,8 @@ class_name PlayerController
 var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
+
+@export var inventory: Inventory
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,5 +25,4 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed * speed_multiplier
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
-
 	move_and_slide()

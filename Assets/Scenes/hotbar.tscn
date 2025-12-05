@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://rhk5ciyows3o"]
+
+[ext_resource type="Texture2D" uid="uid://dus7j23sj6x66" path="res://Assets/Sprites/hotbar.png" id="1_wwkko"]
+[ext_resource type="Script" uid="uid://y4xl4w81t2ad" path="res://Assets/Scripts/inventory/hotbar_container.gd" id="2_44efm"]
+[ext_resource type="PackedScene" uid="uid://06k5qbhvg0st" path="res://Assets/Scenes/slot_gui.tscn" id="2_fck02"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 325.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(3, 3.0092592)
+texture = ExtResource("1_wwkko")
+centered = false
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 14.0
+offset_right = 83.0
+offset_bottom = 304.0
+theme_override_constants/separation = 44
+vertical = true
+script = ExtResource("2_44efm")
+
+[node name="Slot" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2
+
+[node name="Slot2" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2
+
+[node name="Slot3" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2

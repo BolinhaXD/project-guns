@@ -19,3 +19,4 @@ func _process(_delta):
 		animation_player.play("jump")
 	elif player_controller.velocity.y > 0.0:
 		animation_player.play("fall")
+		

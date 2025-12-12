@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6lfx7dqovdwb"
-path="res://.godot/imported/revolver.png-2687111bb344bd8884d1b4b86e1503a9.ctex"
+uid="uid://vnrwrotcv3r2"
+path="res://.godot/imported/shuriken.png-416129c81bf2d676d048eeb8113c9d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/revolver.png"
-dest_files=["res://.godot/imported/revolver.png-2687111bb344bd8884d1b4b86e1503a9.ctex"]
+source_file="res://Assets/Scripts/inventory/items/shuriken/shuriken.png"
+dest_files=["res://.godot/imported/shuriken.png-416129c81bf2d676d048eeb8113c9d3d.ctex"]
 
 [params]
 

@@ -26,11 +26,11 @@ theme_override_constants/separation = 44
 vertical = true
 script = ExtResource("2_44efm")
 
-[node name="Slot" parent="BoxContainer" instance=ExtResource("2_fck02")]
+[node name="Weapon" parent="BoxContainer" instance=ExtResource("2_fck02")]
 layout_mode = 2
 
-[node name="Slot2" parent="BoxContainer" instance=ExtResource("2_fck02")]
+[node name="Secondary" parent="BoxContainer" instance=ExtResource("2_fck02")]
 layout_mode = 2
 
-[node name="Slot3" parent="BoxContainer" instance=ExtResource("2_fck02")]
+[node name="Ability" parent="BoxContainer" instance=ExtResource("2_fck02")]
 layout_mode = 2

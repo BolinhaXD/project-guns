@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://bww730k8j2tsq"]
+
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Scripts/inventory/items/shuriken/shuriken.png" id="1_3nrwd"]
+[ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/inventory/inventory_item_resource.gd" id="1_lwf6d"]
+[ext_resource type="Texture2D" uid="uid://dvphado5esgjq" path="res://Assets/Scripts/inventory/items/shuriken/shuriken_sprite.png" id="2_bs24p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_544va"]
+size = Vector2(27.023653, 27.00141)
+
+[resource]
+script = ExtResource("1_lwf6d")
+name = "Shuriken"
+animation_texture = ExtResource("1_3nrwd")
+icon_texture = ExtResource("2_bs24p")
+type = 1
+shape2D = SubResource("RectangleShape2D_544va")
+shape2DPosition = Vector2(0.5, 0.5)
+damage = 5.0
+metadata/_custom_type_script = "uid://cxrnfy2k1jxln"

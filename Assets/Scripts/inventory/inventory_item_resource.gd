@@ -1,9 +1,9 @@
-extends Resource
+class_name InventoryItem extends Resource
 
-class_name InventoryItem
 
 @export var name: String = "" 
-@export var texture: Texture2D
+@export var animation_texture: Texture2D
+@export var icon_texture: Texture2D
 @export var type: types
 @export var shape2D: Shape2D
 @export var shape2DRotation_degrees: float

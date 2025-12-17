@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://btc1qs101o75v" path="res://Assets/Scripts/inventory/slot_gui.gd" id="1_8sqp3"]
 
 [node name="Slot" type="Panel"]
-self_modulate = Color(0, 0, 0, 0)
+self_modulate = Color(0, 0, 0, 0.03529412)
 custom_minimum_size = Vector2(70, 70)
 offset_right = 70.0
 offset_bottom = 70.0

@@ -13,7 +13,7 @@ theme_override_font_sizes/font_size = 60
 text = "Candy: 0"
 
 [node name="Hotbar" parent="." instance=ExtResource("1_5kaq3")]
-offset_left = 24.0
-offset_top = 304.0
-offset_right = 120.0
-offset_bottom = 628.0
+offset_left = 16.0
+offset_top = 280.0
+offset_right = 136.0
+offset_bottom = 632.0

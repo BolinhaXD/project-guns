@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mcx1uyhkwogk"]
+
+[ext_resource type="Script" uid="uid://be1cspa6ynt83" path="res://item_base_hand.gd" id="2_pwbb5"]
+
+[node name="item_hand" type="Sprite2D"]
+script = ExtResource("2_pwbb5")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkfegmfx86u41"]
 
-[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Scripts/inventory/items/shuriken/shuriken.png" id="1_5tifg"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/shuriken.png" id="1_5tifg"]
 [ext_resource type="Script" uid="uid://1p3iqf881com" path="res://Assets/Scripts/inventory/items/item_base.gd" id="2_ycm64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_544va"]

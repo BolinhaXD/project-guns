@@ -8,7 +8,7 @@ var jump_multiplier = -30.0
 var direction = 0
 
 @export var inventory: Inventory
-
+const nome = "player1"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,22 +20,24 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_power * jump_multiplier
 		
 	# Handle pickup item
-	if Input.is_action_just_pressed("pickup_item") and is_on_floor():pass
+	if Input.is_action_just_pressed("pickup_item"):pass
 		#inventory.pickup_item()
 		
 	# Handle drop item
-	if Input.is_action_just_pressed("drop_item") and is_on_floor():pass
+	if Input.is_action_just_pressed("drop_item"):pass
 		#inventory.drop_item()
 		
 	# Handle equip the primary weapon
-	if Input.is_action_just_pressed("primary_weapon") and is_on_floor():pass
-		
+	if Input.is_action_just_pressed("primary_weapon"):
+		inventory.select_current_item("primary")
 		
 	# Handle equip the secondary weapon
-	if Input.is_action_just_pressed("secondary_weapon") and is_on_floor():pass
+	if Input.is_action_just_pressed("secondary_weapon"):
+		inventory.select_current_item("secondary")
 		
-	# Handle use the ability
-	if Input.is_action_just_pressed("ability") and is_on_floor():pass
+	# Handle equip the ability
+	if Input.is_action_just_pressed("ability"):
+		inventory.select_current_item("ability")
 	
 
 	# Get the input direction and handle the movement/deceleration.

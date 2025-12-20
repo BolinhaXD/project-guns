@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbs2ldyea5idi"]
+
+[ext_resource type="Texture2D" uid="uid://beufr1jx0jiy1" path="res://Assets/Sprites/bullet.png" id="1_ry04a"]
+[ext_resource type="Script" uid="uid://do7h0acqvj0bq" path="res://Assets/Scripts/inventory/items/revolver/bullet.gd" id="2_7gn42"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tlll3"]
+radius = 4.0
+height = 16.0
+
+[node name="Sprite2D" type="Sprite2D"]
+visibility_layer = 2
+texture = ExtResource("1_ry04a")
+script = ExtResource("2_7gn42")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tlll3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-40, -40, 80, 80)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

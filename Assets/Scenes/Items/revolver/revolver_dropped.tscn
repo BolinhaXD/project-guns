@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0figm02vfojt"]
+
+[ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/Items/Base Item/item_base.tscn" id="1_64sub"]
+[ext_resource type="Script" uid="uid://cc3h4xwl84kkq" path="res://Assets/Scripts/inventory/items/revolver/revolver_dropped.gd" id="2_ilibk"]
+[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/revolver.png" id="2_tpl5i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xk64o"]
+radius = 7.0
+
+[node name="Revolver" instance=ExtResource("1_64sub")]
+texture = ExtResource("2_tpl5i")
+script = ExtResource("2_ilibk")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xk64o")

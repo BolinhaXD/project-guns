@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2dcq2tmxwu6h"]
+
+[ext_resource type="PackedScene" uid="uid://mcx1uyhkwogk" path="res://Assets/Scenes/Items/Base Item/item_hand.tscn" id="1_2khge"]
+[ext_resource type="Script" uid="uid://642i8xw4cjux" path="res://Assets/Scripts/inventory/items/revolver/revolver.gd" id="2_w8gqq"]
+
+[node name="Revolver" instance=ExtResource("1_2khge")]
+script = ExtResource("2_w8gqq")

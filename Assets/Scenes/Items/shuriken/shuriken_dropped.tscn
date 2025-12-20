@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp8040opy7sm3"]
+
+[ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/Items/Base Item/item_base.tscn" id="1_635ip"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/shuriken.png" id="2_ial5h"]
+[ext_resource type="Script" uid="uid://sm6nv8whp7l2" path="res://Assets/Scripts/inventory/items/shuriken/shuriken_dropped.gd" id="3_ckf0j"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4cink"]
+points = PackedVector2Array(8.5, 0, 13.5, -13.5, 0, -8.5, -13.5, -13.5, -8.5, 0, -13.5, 13.5, 0, 8.5, 13.5, 13.5)
+
+[node name="Shuriken" instance=ExtResource("1_635ip")]
+texture = ExtResource("2_ial5h")
+script = ExtResource("3_ckf0j")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("ConvexPolygonShape2D_4cink")
+disabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
+build_mode = 1
+polygon = PackedVector2Array(8.5, 0, 13.5, -13.5, 0, -8.5, -13.5, -13.5, -8.5, 0, -13.5, 13.5, 0, 8.5, 13.5, 13.5)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://crxh5m0o3nh5d"]
+
+[ext_resource type="Script" uid="uid://b01otpv7gu6dq" path="res://Assets/Scripts/item_database.gd" id="1_imgcp"]
+
+[node name="ItemDataBase" type="Node2D"]
+script = ExtResource("1_imgcp")
+item_folder = "res://Assets/Scripts/Resources/Items"

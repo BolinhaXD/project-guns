@@ -23,21 +23,25 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pickup_item"):pass
 		#inventory.pickup_item()
 		
-	# Handle drop item
+	# Handle drop item (g)
 	if Input.is_action_just_pressed("drop_item"):pass
 		#inventory.drop_item()
 		
-	# Handle equip the primary weapon
+	# Handle equip the primary weapon (1)
 	if Input.is_action_just_pressed("primary_weapon"):
 		inventory.select_current_item("primary")
 		
-	# Handle equip the secondary weapon
+	# Handle equip the secondary weapon (2)
 	if Input.is_action_just_pressed("secondary_weapon"):
 		inventory.select_current_item("secondary")
 		
-	# Handle equip the ability
+	# Handle equip the ability (3)
 	if Input.is_action_just_pressed("ability"):
 		inventory.select_current_item("ability")
+	
+	# Handle attack with weapon
+	if Input.is_action_just_pressed("attack"):
+		inventory.attack()
 	
 
 	# Get the input direction and handle the movement/deceleration.

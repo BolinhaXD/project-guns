@@ -1,6 +1,6 @@
 extends BoxContainer
 
-@onready var inventory: Inventory = preload("res://Assets/Scripts/inventory/playerInventory.tres")
+@onready var inventory: Inventory = preload("res://Assets/Scripts/Resources/playerInventory.tres")
 @onready var current_weapon_seconday_ability: Array = get_children()
 
 # Called when the node enters the scene tree for the first time.

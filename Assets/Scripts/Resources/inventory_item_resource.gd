@@ -1,16 +1,15 @@
 class_name InventoryItem extends Resource
 
-
 @export var name: String = "" 
 @export var animation_texture: Texture2D
 @export var icon_texture: Texture2D
 @export var in_hand_texture: Texture2D
 @export var type: types
-@export var shape2D: Shape2D
-@export var shape2DRotation_degrees: float
-@export var shape2DPosition: Vector2
+@export var sprite_in_hand_position: Vector2
 
 @export var damage: float
+
+signal item_attack
 
 enum types{
 	PRIMARY,
@@ -18,4 +17,6 @@ enum types{
 	ABILITY
 }
 
-func attack():pass
+func attack():
+	item_attack.emit()
+	pass

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Inventory" load_steps=4 format=3 uid="uid://bxsak6lhvvdxq"]
 
-[ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/inventory/inventory_item_resource.gd" id="1_ohsav"]
-[ext_resource type="Resource" uid="uid://ci7iavm0tf5uy" path="res://Assets/Scripts/inventory/items/revolver/revolver.tres" id="2_i0rhe"]
+[ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/Resources/inventory_item_resource.gd" id="1_ohsav"]
+[ext_resource type="Resource" uid="uid://ci7iavm0tf5uy" path="res://Assets/Scripts/Resources/Items/revolver.tres" id="2_i0rhe"]
 [ext_resource type="Script" uid="uid://pj7hisogdyqr" path="res://Assets/Scripts/inventory/inventory.gd" id="3_gj3sh"]
 
 [resource]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://cqfhwa1xlyt07"]
+[gd_scene load_steps=12 format=4 uid="uid://cqfhwa1xlyt07"]
 
 [ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Sprites/Blue brick wall.png" id="1_uidp5"]
 [ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/player.tscn" id="2_3uyhe"]
 [ext_resource type="PackedScene" uid="uid://25yi5gvsfuab" path="res://Assets/Scenes/candy.tscn" id="3_8wi1m"]
-[ext_resource type="PackedScene" uid="uid://bp8040opy7sm3" path="res://Assets/Scenes/Items/shuriken/shuriken_dropped.tscn" id="5_7fk0h"]
-[ext_resource type="PackedScene" uid="uid://b0figm02vfojt" path="res://Assets/Scenes/Items/revolver/revolver_dropped.tscn" id="9_0ufq0"]
+[ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/abstract_item.tscn" id="5_nlyig"]
+[ext_resource type="Resource" uid="uid://bkk3mdxng4t2i" path="res://Assets/Scripts/inventory/items/revolver/revolver_V2.tres" id="6_0ufq0"]
+[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/revolver.png" id="6_f20k6"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/shuriken.png" id="8_0ufq0"]
+[ext_resource type="Resource" uid="uid://bww730k8j2tsq" path="res://Assets/Scripts/inventory/items/shuriken/shuriken.tres" id="9_u1wc8"]
 
 [sub_resource type="GDScript" id="GDScript_f20k6"]
 
@@ -73,8 +76,14 @@ position = Vector2(43, -17)
 [node name="AnimatedSprite2D4" parent="Candy group" instance=ExtResource("3_8wi1m")]
 position = Vector2(61, -17)
 
-[node name="Revolver" parent="." instance=ExtResource("9_0ufq0")]
-position = Vector2(-96, -19)
+[node name="Sprite2D" parent="." instance=ExtResource("5_nlyig")]
+position = Vector2(-131, -24)
+texture = ExtResource("6_f20k6")
+item_info = ExtResource("6_0ufq0")
 
-[node name="Shuriken" parent="." instance=ExtResource("5_7fk0h")]
-position = Vector2(-144, -25)
+[node name="Sprite2D2" parent="." instance=ExtResource("5_nlyig")]
+position = Vector2(-38, -22)
+texture = ExtResource("8_0ufq0")
+region_enabled = true
+region_rect = Rect2(0, 0, 40, 40)
+item_info = ExtResource("9_u1wc8")

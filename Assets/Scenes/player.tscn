@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1o7k86oksv3c" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
 [ext_resource type="Texture2D" uid="uid://de7sh8djanxkj" path="res://Assets/Sprites/v-taper character 32bit idle animation (2).png" id="2_7dd06"]
 [ext_resource type="Script" uid="uid://gpqnl5eyiswe" path="res://Assets/Scripts/player_animator.gd" id="2_23lac"]
-[ext_resource type="Resource" uid="uid://bxsak6lhvvdxq" path="res://Assets/Scripts/inventory/playerInventory.tres" id="2_c3tg1"]
+[ext_resource type="Resource" uid="uid://bxsak6lhvvdxq" path="res://Assets/Scripts/Resources/playerInventory.tres" id="2_c3tg1"]
 [ext_resource type="Texture2D" uid="uid://eluherd5p2hd" path="res://Assets/Sprites/v-taper character 32bit run animation.png" id="3_38rej"]
 [ext_resource type="Texture2D" uid="uid://bl2sye04w7ium" path="res://Assets/Sprites/v-taper character 32bit jump animation.png" id="5_w3t24"]
 [ext_resource type="PackedScene" uid="uid://phfsln60wlx4" path="res://Assets/Scenes/hand.tscn" id="6_w3t24"]
@@ -208,17 +208,21 @@ position = Vector2(0, -18)
 player_controller = NodePath("..")
 
 [node name="Marker2DRight" type="Marker2D" parent="."]
+visible = false
 position = Vector2(10, -18)
 
 [node name="Marker2DLeft" type="Marker2D" parent="."]
+visible = false
 position = Vector2(-10, -18)
 
 [node name="RightHand" parent="." node_paths=PackedStringArray("pivot", "player_controller") instance=ExtResource("6_w3t24")]
+visible = false
 position = Vector2(10, -18)
 pivot = NodePath("../Marker2DRight")
 player_controller = NodePath("..")
 
 [node name="LeftHand" parent="." node_paths=PackedStringArray("pivot", "player_controller") instance=ExtResource("6_w3t24")]
+visible = false
 position = Vector2(-10, -18)
 pivot = NodePath("../Marker2DLeft")
 player_controller = NodePath("..")

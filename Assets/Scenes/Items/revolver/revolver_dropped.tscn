@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/Items/Base Item/item_base.tscn" id="1_64sub"]
 [ext_resource type="Script" uid="uid://cc3h4xwl84kkq" path="res://Assets/Scripts/inventory/items/revolver/revolver_dropped.gd" id="2_ilibk"]
-[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/revolver.png" id="2_tpl5i"]
+[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/Weapons/revolver.png" id="2_tpl5i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xk64o"]
 radius = 7.0
@@ -15,3 +15,6 @@ script = ExtResource("2_ilibk")
 position = Vector2(0, -3)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_xk64o")
+
+[node name="Marker2D" type="Marker2D" parent="." index="1"]
+position = Vector2(13, -5.5)

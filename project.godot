@@ -20,9 +20,18 @@ config/icon="res://icon.svg"
 GameManager="*res://Assets/Scenes/game_manager.tscn"
 ItemDataBase="*res://Assets/Scenes/item_database.tscn"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/Scenes/": "green",
+"res://Assets/Scripts/": "red",
+"res://Assets/Sprites/": "purple"
+}
+
 [global_group]
 
 Player=""
+Ground=""
 
 [input]
 

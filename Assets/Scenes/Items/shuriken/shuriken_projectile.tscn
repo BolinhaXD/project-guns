@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyxkunxp725fc"]
+
+[ext_resource type="PackedScene" uid="uid://bvwr20w362q5k" path="res://Assets/Scenes/Items/Base Item/projectile_base_v2.tscn" id="1_a30qd"]
+[ext_resource type="Script" uid="uid://2xpo50vsf7fd" path="res://Assets/Scripts/inventory/items/shuriken/shuriken_projectile.gd" id="2_57iie"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/Weapons/shuriken.png" id="2_dcjql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57iie"]
+size = Vector2(26, 26)
+
+[node name="Node2D" instance=ExtResource("1_a30qd")]
+script = ExtResource("2_57iie")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_dcjql")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_57iie")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://rhk5ciyows3o"]
+
+[ext_resource type="Script" uid="uid://ey8xmkoahjdr" path="res://Assets/Scripts/inventory/hotbar.gd" id="1_0tiwt"]
+[ext_resource type="Texture2D" uid="uid://bc3rgf774jkfs" path="res://Assets/Sprites/UI/hotbar-selection.png" id="1_44efm"]
+[ext_resource type="Script" uid="uid://y4xl4w81t2ad" path="res://Assets/Scripts/inventory/hotbar_box_container.gd" id="2_44efm"]
+[ext_resource type="PackedScene" uid="uid://06k5qbhvg0st" path="res://Assets/Scenes/UI/slot_gui.tscn" id="2_fck02"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 349.0
+script = ExtResource("1_0tiwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8146973e-06, 0)
+scale = Vector2(3, 3.0092592)
+texture = ExtResource("1_44efm")
+centered = false
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 116)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 24.0
+offset_right = 95.0
+offset_bottom = 325.0
+theme_override_constants/separation = 44
+alignment = 1
+vertical = true
+script = ExtResource("2_44efm")
+
+[node name="Weapon" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2
+
+[node name="Secondary" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2
+
+[node name="Ability" parent="BoxContainer" instance=ExtResource("2_fck02")]
+layout_mode = 2

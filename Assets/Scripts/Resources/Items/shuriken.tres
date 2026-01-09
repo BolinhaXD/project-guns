@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=6 format=3 uid="uid://bww730k8j2tsq"]
 
-[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/shuriken.png" id="1_3nrwd"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/Weapons/shuriken.png" id="1_3nrwd"]
 [ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/Resources/inventory_item_resource.gd" id="1_lwf6d"]
-[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/shuriken.png" id="2_3nrwd"]
-[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Sprites/shuriken_in_hand.png" id="3_bs24p"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/Weapons/shuriken.png" id="2_3nrwd"]
+[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Sprites/Weapons/shuriken_in_hand.png" id="3_bs24p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_544va"]
 size = Vector2(27.023653, 27.00141)

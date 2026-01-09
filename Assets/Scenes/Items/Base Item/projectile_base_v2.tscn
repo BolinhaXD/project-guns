@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvwr20w362q5k"]
+
+[ext_resource type="Script" uid="uid://do7h0acqvj0bq" path="res://Assets/Scripts/inventory/items/item base/projectile.gd" id="1_6dh0u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_efg4w"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_6dh0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_efg4w")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+rect = Rect2(-40, -40, 80, 80)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

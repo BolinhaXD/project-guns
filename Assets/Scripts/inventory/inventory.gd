@@ -12,7 +12,7 @@ signal selected_item_updated(type: String)
 @export var current_selected_item: InventoryItem
 
 
-func pickup_item(_inventoryItem: InventoryItem):
+func pickup_item(_inventoryItem: InventoryItem = null):
 	match _inventoryItem.type:
 		InventoryItem.types.PRIMARY:
 			current_primary = _inventoryItem
@@ -21,12 +21,28 @@ func pickup_item(_inventoryItem: InventoryItem):
 		InventoryItem.types.ABILITY:
 			current_ability = _inventoryItem
 	hotbar_sprite_updated.emit()
+
+
+func drop_item(item_info: InventoryItem):
+	current_selected_item = null
+	match item_info.type:
+		InventoryItem.types.PRIMARY:
+			current_primary = null
+		InventoryItem.types.SECONDARY:
+			current_secondary = null
+		InventoryItem.types.ABILITY:
+			current_ability = null
+	hotbar_sprite_updated.emit()
+	selected_item_updated.emit("none")
 	
 
-func drop_item():
-	#instanciate()
-	pass
-	
+func instanciate_current_selected_item():
+	var msg = "res://Assets/Scenes/Items/" + current_selected_item.name + "/" + current_selected_item.name + "_dropped.tscn"
+	var item_load = load(msg)
+	var item_instance = item_load.instantiate()
+	item_instance.item_info = current_selected_item
+	item_instance.is_initialised = true
+	return item_instance
 
 func select_current_item(_itemTypeName: String):
 	match _itemTypeName:
@@ -70,5 +86,3 @@ func select_current_item(_itemTypeName: String):
 func attack():
 	if current_selected_item != null:
 		current_selected_item.attack()
-	else:
-		print("Hands")

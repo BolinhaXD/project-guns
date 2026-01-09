@@ -1,6 +1,8 @@
 class_name Item extends Sprite2D
 
+@export var is_initialised: bool = false
 @export var item_info: Resource
+@export var player_controller: PlayerController
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +12,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	
-	
-func pickup(player: PlayerController):
-	player.inventory.pickup_item(item_info)
-	queue_free()

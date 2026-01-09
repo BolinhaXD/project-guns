@@ -1,0 +1,2 @@
+extends EnemyAnimator
+class_name MeleeEnemyAnimator

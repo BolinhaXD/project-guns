@@ -1,12 +1,8 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://ci7iavm0tf5uy"]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://ci7iavm0tf5uy"]
 
 [ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/Resources/inventory_item_resource.gd" id="1_8u7eo"]
-[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/revolver.png" id="2_dallo"]
-[ext_resource type="Texture2D" uid="uid://cak0vqms3tw2l" path="res://Assets/Sprites/revolver_in_hand.png" id="2_o58ts"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7071o"]
-radius = 5.0
-height = 27.702763
+[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/Weapons/revolver.png" id="2_dallo"]
+[ext_resource type="Texture2D" uid="uid://cak0vqms3tw2l" path="res://Assets/Sprites/Weapons/revolver_in_hand.png" id="2_o58ts"]
 
 [resource]
 script = ExtResource("1_8u7eo")
@@ -14,8 +10,5 @@ name = "revolver"
 animation_texture = ExtResource("2_dallo")
 icon_texture = ExtResource("2_dallo")
 in_hand_texture = ExtResource("2_o58ts")
-shape2D = SubResource("CapsuleShape2D_7071o")
-shape2DRotation_degrees = 90.0
-shape2DPosition = Vector2(0, -3)
 damage = 10.0
 metadata/_custom_type_script = "uid://cxrnfy2k1jxln"

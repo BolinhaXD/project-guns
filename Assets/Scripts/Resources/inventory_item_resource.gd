@@ -20,3 +20,6 @@ enum types{
 func attack():
 	item_attack.emit()
 	pass
+
+func get_hash():
+	return hash(name) + hash(animation_texture) + hash(type)

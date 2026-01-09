@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5lu4xfq5i6k4"]
+
+[ext_resource type="Script" uid="uid://bt5wqjepdklmy" path="res://Assets/Scripts/Enemies/enemy_animator.gd" id="1_apv5f"]
+[ext_resource type="Script" uid="uid://iiv0x71iqem4" path="res://Assets/Scripts/Enemies/enemy_controller.gd" id="1_f25ph"]
+[ext_resource type="Texture2D" uid="uid://ui0symxx1rar" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-idle-and-blink.png" id="2_f25ph"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f20k6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ufq0"]
+radius = 7.0
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlyig"]
+size = Vector2(6, 15)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkhp6"]
+radius = 9.0
+height = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkhp6"]
+radius = 60.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_f25ph")
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
+
+[node name="Agent Animation" type="Node2D" parent="." node_paths=PackedStringArray("enemy_controller", "animation_player", "sprite")]
+script = ExtResource("1_apv5f")
+enemy_controller = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Agent Animation"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_f20k6")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="Agent Animation"]
+position = Vector2(0, -19)
+texture = ExtResource("2_f25ph")
+hframes = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("CapsuleShape2D_0ufq0")
+
+[node name="CollisionShape2DFire" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_nlyig")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -24)
+shape = SubResource("CapsuleShape2D_xkhp6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.7999999999999998
+autostart = true
+
+[node name="Sight Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight Range"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_xkhp6")
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="animation_finished" from="Agent Animation/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Sight Range" to="." method="_on_sight_range_area_entered"]
+[connection signal="area_exited" from="Sight Range" to="." method="_on_sight_range_area_exited"]

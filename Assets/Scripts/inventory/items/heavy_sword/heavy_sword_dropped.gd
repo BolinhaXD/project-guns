@@ -1,0 +1,13 @@
+extends Item
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	super()
+	if !is_initialised:
+		item_info = ItemDataBase.get_item("heavy_sword").duplicate()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass

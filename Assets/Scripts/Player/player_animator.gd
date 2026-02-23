@@ -1,3 +1,4 @@
+## Class responsible for the animation of the animation of the player
 extends Node2D
 
 @export var player_controller : PlayerController
@@ -5,15 +6,19 @@ extends Node2D
 @export var sprite: Sprite2D
 
 func _process(_delta):
+	## Direction of the player
 	if player_controller.direction == 1:
 		sprite.flip_h = false
 	elif player_controller.direction == -1:
 		sprite.flip_h = true
+	
+	## Moving or stopping animations
 	if abs(player_controller.velocity.x) > 0.0:
 		animation_player.play("move")
 	else: 
 		animation_player.play("idle")
-		
+	
+	## Jumping or falling animations
 	if player_controller.velocity.y < 0.0:
 		animation_player.play("jump")
 	elif player_controller.velocity.y > 0.0:

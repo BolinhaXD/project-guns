@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsr82a12oysqc" path="res://Assets/Scripts/Enemies/melee_enemy_controller.gd" id="1_xmd1x"]
 [ext_resource type="Texture2D" uid="uid://bpdanmkx1fiet" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-attack.png" id="2_d5f16"]
-[ext_resource type="Script" uid="uid://csnmkhnlxxkf5" path="res://Assets/Scenes/melee_enemy_animator.gd" id="2_ryfu3"]
+[ext_resource type="Script" uid="uid://csnmkhnlxxkf5" path="res://Assets/Scripts/Enemies/melee_enemy_animator.gd" id="2_ryfu3"]
 [ext_resource type="Texture2D" uid="uid://ui0symxx1rar" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-idle-and-blink.png" id="3_ryfu3"]
 [ext_resource type="Texture2D" uid="uid://cs52s20hqim2x" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-death.png" id="5_xmd1x"]
 [ext_resource type="Texture2D" uid="uid://doplgq8lqx7fm" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-walk.png" id="6_mmwwh"]
@@ -161,7 +161,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 8.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,7 +179,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ahw51")
 }],
-"loop": true,
+"loop": false,
 "name": &"dead",
 "speed": 7.0
 }, {
@@ -268,7 +268,7 @@ radius = 60.0
 script = ExtResource("1_xmd1x")
 
 [node name="Cooldown" type="Timer" parent="."]
-wait_time = 0.88
+wait_time = 0.7
 one_shot = true
 
 [node name="Agent Animation" type="Node2D" parent="." node_paths=PackedStringArray("enemy_controller", "animated_sprite")]
@@ -279,7 +279,7 @@ animated_sprite = NodePath("AnimatedSprite2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Agent Animation"]
 position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_q1ein")
-animation = &"walk"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -304,6 +304,7 @@ position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_xkhp6")
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="animation_finished" from="Agent Animation/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

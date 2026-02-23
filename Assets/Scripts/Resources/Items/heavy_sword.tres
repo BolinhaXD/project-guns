@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bhmj2yotgrrj"]
+
+[ext_resource type="Texture2D" uid="uid://byj37ac8j33y8" path="res://Assets/Sprites/Weapons/heavy-sword.png" id="1_84eyp"]
+[ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/Resources/inventory_item_resource.gd" id="1_r0b8c"]
+[ext_resource type="Texture2D" uid="uid://bq16n0d2udlf6" path="res://Assets/Sprites/Weapons/heavy-sword-hand.png" id="2_dh2r2"]
+
+[resource]
+script = ExtResource("1_r0b8c")
+name = "heavy_sword"
+animation_texture = ExtResource("1_84eyp")
+icon_texture = ExtResource("1_84eyp")
+in_hand_texture = ExtResource("2_dh2r2")
+damage = 15.0
+metadata/_custom_type_script = "uid://cxrnfy2k1jxln"

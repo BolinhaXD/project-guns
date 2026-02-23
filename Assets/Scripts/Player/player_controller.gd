@@ -1,18 +1,43 @@
+## Main class of the multiuple player that can exist
+## This class is what the player uses to move and interact with the enviroment 
+## Contains inventory systems and multiple possible actions such as droping shotting/attacking with the weapons
 class_name PlayerController extends CharacterBody2D
 
+## UI of the player
+@onready var gui_scene = preload("res://Assets/Scenes/UI/gui.tscn")
+
+
+## Speed which the player walks
 @export var speed: float = 7.0
+
+## The force applied to the player to be able to jump
 @export var jump_power = 8.0
+
+## Health of the player
 @export var health_points: float = 100.0
 
+## Multiplier applied to the movement
 var speed_multiplier = 30.0
+
+## Multiplier applied to the jump
 var jump_multiplier = -30.0
+
+## Direction of the player (1: right, -1: left)
 var direction = 0
 
+## Inventory of the player (its own class)
 @export var inventory: Inventory
 
+## Signal when an item is picked up
 signal picked_up
+
+## Array that controls the items that are on the ground possible to be picked up
+## Makes an ordering of what can be picked up first
 var possible_pickup_items: Array[Item]
 
+func _ready() -> void:
+	inventory.item_dropped.connect(drop_item)
+	pass
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -24,12 +49,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_power * jump_multiplier
 		
 	# Handle pickup item (E)
+	## Emits the signal and makes the inventory pick up the item
 	if Input.is_action_just_pressed("pickup_item"):
 		if !possible_pickup_items.is_empty():
 			picked_up.emit()
 			inventory.pickup_item(possible_pickup_items[0].item_info)
 		
 	# Handle drop item (G)
+	## Removes the item from the inventory and creates it dropped (need refactor)
 	if Input.is_action_just_pressed("drop_item"):
 		if inventory.current_selected_item != null:
 			var item_instance = inventory.instanciate_current_selected_item()
@@ -54,6 +81,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		inventory.attack()
 	
+	# Handle pause
+	if Input.is_action_just_pressed("pause"):
+		print("nhoca")
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -65,6 +96,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+## Makes the player take damage from diferent sources
 func take_damage(_damage):
 	if health_points > _damage:
 		health_points -= _damage
@@ -73,11 +105,18 @@ func take_damage(_damage):
 		dead()
 	print("Health: ", health_points)
 
-
+## Makes the player die (still in development)
 func dead():
 	pass
 
+## Make the player drop the item if an item of the same type is picked up
+func drop_item(item: Node2D):
+	item.player_controller = self
+	item.global_position = get_node("Hands").global_position
+	get_tree().root.add_child(item)
 
+## When the player enters an area 
+## If the area is an item it makes the indication pop up and it will be able to be picked up
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Item:
 		area.get_parent().get_node("Pickup").visible = true
@@ -91,7 +130,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 				possible_pickup_items.append(area.get_parent())
 				area.get_parent().player_controller.picked_up.connect(area.get_parent().queue_free)
 
-
+## When the player leaves an area 
+## If the area is an item it makes so that the indication pop out and it will not be able to be picked up
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.get_parent() is Item:
 		area.get_parent().get_node("Pickup").visible = false

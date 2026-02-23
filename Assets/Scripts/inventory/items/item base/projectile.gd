@@ -3,7 +3,7 @@ class_name ProjectileBase
 
 @onready var sprite2d: Sprite2D = $Sprite2D
 @onready var area2d: Area2D = $Area2D
-const SPEED: int = 300 
+var SPEED: int = 300 
 var damage: int
 
 # Called when the node enters the scene tree for the first time.
@@ -28,6 +28,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Ground"):
 		queue_free()
-	elif body is AlienEnemy:
+	elif body is BaseEnemy:
 		body.take_damage(damage)
 		queue_free()

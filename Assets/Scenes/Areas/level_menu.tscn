@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhrd8kdi8h3lv"]
+
+[ext_resource type="Script" uid="uid://bxdkpfi6lnyvu" path="res://Assets/Scripts/Menu/level_menu.gd" id="1_c66al"]
+[ext_resource type="Texture2D" uid="uid://bqt6cnto8yuqk" path="res://Assets/Sprites/Menu/main-menu-background.png" id="1_xqkco"]
+[ext_resource type="FontFile" uid="uid://kqb4pqkfgqpx" path="res://Assets/Sprites/UI/AeogoPixellated-DYYEd.ttf" id="2_sd213"]
+[ext_resource type="Texture2D" uid="uid://c16o0xu0drxl6" path="res://Assets/Sprites/Menu/start-button.png" id="5_assq6"]
+[ext_resource type="Texture2D" uid="uid://b0kqalw8e5cm7" path="res://Assets/Sprites/Menu/options-button.png" id="7_a1wyl"]
+[ext_resource type="Texture2D" uid="uid://teb4shh4cvwj" path="res://Assets/Sprites/Menu/area-1.png" id="10_2it0w"]
+[ext_resource type="Texture2D" uid="uid://bnuudtaie7uda" path="res://Assets/Sprites/Menu/area-2.png" id="11_na4y5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2nmct"]
+texture = ExtResource("1_xqkco")
+
+[node name="Level menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c66al")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2nmct")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -512.0
+offset_top = 64.0
+offset_right = -21.0
+offset_bottom = 197.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/shadow_outline_size = 40
+theme_override_fonts/font = ExtResource("2_sd213")
+theme_override_font_sizes/font_size = 64
+text = "Area
+      Selector"
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -46.0
+offset_right = 654.0
+offset_bottom = 46.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="Area1Button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_mode = 0
+texture_normal = ExtResource("10_2it0w")
+texture_hover = ExtResource("5_assq6")
+stretch_mode = 0
+
+[node name="Area2Button" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_mode = 0
+texture_normal = ExtResource("11_na4y5")
+texture_hover = ExtResource("7_a1wyl")
+stretch_mode = 0
+
+[connection signal="pressed" from="HBoxContainer/Area1Button" to="." method="_on_area_1_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Area2Button" to="." method="_on_area_2_button_pressed"]

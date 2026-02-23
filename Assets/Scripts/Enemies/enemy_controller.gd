@@ -106,8 +106,3 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _on_cooldown_timeout() -> void:
 	player.take_damage(damage)
 	$Cooldown.start()
-
-
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "dead":
-		queue_free()

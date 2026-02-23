@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://ctcrmtra3ijwi"]
 
 [ext_resource type="Script" uid="uid://bfspcrf08yi8e" path="res://Assets/Scripts/Enemies/shooting_enemy_controller.gd" id="1_rp0qi"]
-[ext_resource type="Script" uid="uid://btg8r8j2d2tge" path="res://Assets/Scenes/shooting_enemy_animator.gd" id="2_gon3e"]
+[ext_resource type="Script" uid="uid://btg8r8j2d2tge" path="res://Assets/Scripts/Enemies/shooting_enemy_animator.gd" id="2_gon3e"]
 [ext_resource type="Texture2D" uid="uid://bc4dtcpfo5j13" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-walk.png" id="5_4dcov"]
 [ext_resource type="Texture2D" uid="uid://c3a3l37dxdfy6" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-dead.png" id="5_mqmsn"]
 [ext_resource type="Texture2D" uid="uid://nuguep58xoxj" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-idle.png" id="6_w1djk"]
@@ -161,8 +161,8 @@ animations = [{
 radius = 7.0
 height = 36.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xkhp6"]
-height = 22.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dcov"]
+radius = 48.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkhp6"]
 radius = 60.0
@@ -182,19 +182,19 @@ animated_sprite = NodePath("AnimatedSprite2D")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Agent Animation"]
 position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_82s51")
-animation = &"walk"
+animation = &"dead"
 autoplay = "idle"
-frame_progress = 0.53733015
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_0ufq0")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D22" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -24)
-shape = SubResource("CapsuleShape2D_xkhp6")
+shape = SubResource("CircleShape2D_4dcov")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.7999999999999998
@@ -207,7 +207,11 @@ visible = false
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_xkhp6")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(11.5, -19.5)
+
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="animation_finished" from="Agent Animation/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

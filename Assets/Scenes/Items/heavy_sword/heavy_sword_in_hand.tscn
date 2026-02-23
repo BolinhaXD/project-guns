@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://xicm122ntyk0"]
+
+[ext_resource type="PackedScene" uid="uid://qi7wwbyqofu7" path="res://Assets/Scenes/Items/Base Item/item_in_hand.tscn" id="1_bhorc"]
+[ext_resource type="Texture2D" uid="uid://bq16n0d2udlf6" path="res://Assets/Sprites/Weapons/heavy-sword-hand.png" id="2_7amk7"]
+[ext_resource type="Script" uid="uid://cxiferqb2k41r" path="res://Assets/Scripts/inventory/items/heavy_sword/heavy_sword.gd" id="2_s2ta6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sbl56"]
+radius = 7.0
+height = 44.0
+
+[node name="heavy sword in hand" instance=ExtResource("1_bhorc")]
+script = ExtResource("2_s2ta6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(0, -16)
+texture = ExtResource("2_7amk7")
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_sbl56")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

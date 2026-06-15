@@ -6,7 +6,6 @@ class_name PlayerController extends CharacterBody2D
 ## UI of the player
 @onready var gui_scene = preload("res://Assets/Scenes/UI/gui.tscn")
 
-
 ## Speed which the player walks
 @export var speed: float = 7.0
 
@@ -22,8 +21,11 @@ var speed_multiplier = 30.0
 ## Multiplier applied to the jump
 var jump_multiplier = -30.0
 
-## Direction of the player (1: right, -1: left)
+## Direction of the player (-1: left, 1: right)
 var direction = 0
+
+# Control if the player can leap in a wall
+var can_leap = false
 
 ## Inventory of the player (its own class)
 @export var inventory: Inventory
@@ -45,8 +47,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_power * jump_multiplier
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor_only() or (is_on_wall() and can_leap):
+			velocity.y = jump_power * jump_multiplier * 1.5
+		if is_on_wall_only():
+			print("nhoca")
+			velocity.x = -(jump_power * jump_multiplier * 1.5)
 		
 	# Handle pickup item (E)
 	## Emits the signal and makes the inventory pick up the item
@@ -83,14 +89,16 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle pause
 	if Input.is_action_just_pressed("pause"):
-		print("nhoca")
-
+		print("pause")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * speed * speed_multiplier
+		if is_on_wall_only():
+			if direction == normalized_wall(get_wall_normal()):
+				velocity.y = velocity.y / 2
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 	move_and_slide()
@@ -144,3 +152,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 					possible_pickup_items[0].player_controller.picked_up.connect(possible_pickup_items[0].queue_free)
 			else:
 				possible_pickup_items.erase(area.get_parent())
+
+# Function to normalize the normal of the wall
+func normalized_wall(normal: Vector2):
+	if normal.x < 0:
+		return 1.0
+	else: return -1.0

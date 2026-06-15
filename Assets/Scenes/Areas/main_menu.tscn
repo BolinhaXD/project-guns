@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhwua8rhc01m6"]
+[gd_scene format=3 uid="uid://bhwua8rhc01m6"]
 
 [ext_resource type="Script" uid="uid://dygm1687em0d6" path="res://Assets/Scripts/Menu/main_menu.gd" id="1_2kck1"]
 [ext_resource type="Texture2D" uid="uid://qwl50ri53t0r" path="res://Assets/Sprites/Menu/start-button-v1.png" id="1_p06v6"]
@@ -14,7 +14,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kck1"]
 texture = ExtResource("1_xvp6f")
 
-[node name="Main menu" type="Control"]
+[node name="Main menu" type="Control" unique_id=1553771989]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_2kck1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=900821534]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,7 +34,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_2kck1")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1780358115]
 position = Vector2(264, 362)
 rotation = -0.1605703
 scale = Vector2(15, 15)
@@ -42,7 +42,7 @@ texture = ExtResource("2_2kck1")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1734870834]
 layout_mode = 0
 offset_left = 494.0
 offset_top = 100.0
@@ -56,7 +56,7 @@ theme_override_font_sizes/font_size = 64
 text = "Project-guns"
 uppercase = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1377497037]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -73,7 +73,7 @@ mouse_filter = 2
 theme_override_constants/separation = 19
 alignment = 1
 
-[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+[node name="StartButton" type="TextureButton" parent="VBoxContainer" unique_id=1753811466]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0
@@ -81,7 +81,7 @@ texture_normal = ExtResource("1_p06v6")
 texture_hover = ExtResource("6_nh7ro")
 stretch_mode = 0
 
-[node name="OptionsButton" type="TextureButton" parent="VBoxContainer"]
+[node name="OptionsButton" type="TextureButton" parent="VBoxContainer" unique_id=89241086]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0
@@ -89,7 +89,7 @@ texture_normal = ExtResource("2_d8c0k")
 texture_hover = ExtResource("8_nwjsm")
 stretch_mode = 0
 
-[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer" unique_id=373167635]
 layout_mode = 2
 size_flags_vertical = 3
 action_mode = 0

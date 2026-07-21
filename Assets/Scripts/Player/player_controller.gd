@@ -21,11 +21,23 @@ var speed_multiplier = 30.0
 ## Multiplier applied to the jump
 var jump_multiplier = -30.0
 
+## Multiplier applied to the jump
+var wall_jump_multiplier = -20.0
+
+
 ## Direction of the player (-1: left, 1: right)
 var direction = 0
 
-# Control if the player can leap in a wall
-var can_leap = false
+## Control if the player can leap in a wall
+var can_leap = true
+var leap_count = 0
+
+## Wall jump helpers
+var wall_jump: Vector2 = Vector2.ZERO
+var wall_jump_timer: float = 0.0 
+var right_wall_jump_direction: Vector2 = Vector2(-1,-1)
+var left_wall_jump_direction: Vector2 = Vector2(1,-1)
+var was_on_wall_last_frame = false
 
 ## Inventory of the player (its own class)
 @export var inventory: Inventory
@@ -45,14 +57,30 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	#if is_on_wall_only():
+		#if leap_count == 0:
+			#leap_count += 1
+		#else:
+			#leap_count == 0 
+			#can_leap = false
+	#
+	if wall_jump_timer > 0.0:
+		velocity = wall_jump
+		wall_jump_timer -= delta
+		if wall_jump_timer <= 0.0:
+			wall_jump = Vector2.ZERO
 
 	# Handle jump.
+	## 
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor_only() or (is_on_wall() and can_leap):
+		if is_on_floor_only():
 			velocity.y = jump_power * jump_multiplier * 1.5
-		if is_on_wall_only():
-			print("nhoca")
-			velocity.x = -(jump_power * jump_multiplier * 1.5)
+		if is_on_wall_only() and can_leap:
+			if get_wall_normal().x > 0:
+				apply_wall_jump(left_wall_jump_direction, 0.24)
+			else:
+				apply_wall_jump(right_wall_jump_direction, 0.24) 
 		
 	# Handle pickup item (E)
 	## Emits the signal and makes the inventory pick up the item
@@ -158,3 +186,16 @@ func normalized_wall(normal: Vector2):
 	if normal.x < 0:
 		return 1.0
 	else: return -1.0
+
+func apply_wall_jump(direction_vec: Vector2, wall_jump_duration: float) -> void:
+	wall_jump = direction_vec * jump_power * (-jump_multiplier) * 1.5
+	wall_jump_timer = wall_jump_duration
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Ground"):
+		if is_on_wall() and not is_on_floor() and not is_on_ceiling():
+			was_on_wall_last_frame = true
+			print("true")
+		else:
+			was_on_wall_last_frame = false
+			print("false")

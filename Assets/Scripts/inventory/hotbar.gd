@@ -2,6 +2,7 @@ extends Control
 
 @onready var inventory: Inventory = preload("res://Assets/Scripts/Resources/playerInventory.tres")
 @onready var hotbar_sprite: Sprite2D = $Sprite2D
+@onready var label: Label = $"../HealthBar/Label"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,19 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://kenpl48l7u7o"]
+[gd_scene format=3 uid="uid://kenpl48l7u7o"]
 
 [ext_resource type="PackedScene" uid="uid://rhk5ciyows3o" path="res://Assets/Scenes/UI/hotbar.tscn" id="1_5kaq3"]
 
-[node name="GUI" type="CanvasLayer"]
+[node name="GUI" type="CanvasLayer" unique_id=1428185443]
 
-[node name="Hotbar" parent="." instance=ExtResource("1_5kaq3")]
+[node name="Hotbar" parent="." unique_id=1604156640 instance=ExtResource("1_5kaq3")]
 offset_left = 16.0
 offset_top = 280.0
 offset_right = 136.0
 offset_bottom = 632.0
 
-[node name="HealthBar" type="Control" parent="."]
+[node name="HealthBar" type="Control" parent="." unique_id=2008217761]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar"]
+[node name="Sprite2D" type="Sprite2D" parent="HealthBar" unique_id=1632201466]
+
+[node name="Label" type="Label" parent="HealthBar" unique_id=1242991880]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

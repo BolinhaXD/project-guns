@@ -24,7 +24,6 @@ var jump_multiplier = -30.0
 ## Multiplier applied to the jump
 var wall_jump_multiplier = -20.0
 
-
 ## Direction of the player (-1: left, 1: right)
 var direction = 0
 
@@ -64,17 +63,17 @@ func _physics_process(delta: float) -> void:
 		#else:
 			#leap_count == 0 
 			#can_leap = false
-	#
+	
 	if wall_jump_timer > 0.0:
 		velocity = wall_jump
 		wall_jump_timer -= delta
 		if wall_jump_timer <= 0.0:
 			wall_jump = Vector2.ZERO
-
+			
 	# Handle jump.
 	## 
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor_only():
+		if is_on_floor():
 			velocity.y = jump_power * jump_multiplier * 1.5
 		if is_on_wall_only() and can_leap:
 			if get_wall_normal().x > 0:
@@ -130,7 +129,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 	move_and_slide()
-
 
 ## Makes the player take damage from diferent sources
 func take_damage(_damage):
@@ -195,7 +193,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Ground"):
 		if is_on_wall() and not is_on_floor() and not is_on_ceiling():
 			was_on_wall_last_frame = true
-			print("true")
 		else:
 			was_on_wall_last_frame = false
-			print("false")

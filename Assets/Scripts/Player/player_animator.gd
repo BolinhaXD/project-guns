@@ -22,20 +22,27 @@ func _process(_delta):
 		else: 
 			animation_player.play("idle")
 			
-	## Sliding animations
-	if player_controller.is_on_wall():
-		current_place = "wall"
-		if player_controller.direction == 1:
-			sprite.flip_h = true
-		elif player_controller.direction == -1:
-			sprite.flip_h = false
-		animation_player.play("sliding")
-	
 	## Jumping or falling animations
-	if !player_controller.is_on_floor() and !player_controller.is_on_ceiling() and !player_controller.is_on_wall():
+	if !player_controller.is_on_floor() and !player_controller.is_on_ceiling():
 		current_place = "ar"
+		#print(current_place)
 		if player_controller.velocity.y < 0.0:
 			animation_player.play("jump")
 		elif player_controller.velocity.y > 0.0:
 			animation_player.play("fall")
+			
+	## Sliding wall animations "move_left", "move_right"
+	if player_controller.is_on_wall_only() and player_controller.direction == player_controller.normalized_wall(player_controller.get_wall_normal()):
+		current_place = "wall"
+		#print(current_place)
+		if Input.is_action_pressed("move_right"):
+			sprite.flip_h = true
+			sprite.position = Vector2(2, -15)
+		if Input.is_action_pressed("move_left"):
+			sprite.flip_h = false
+			sprite.position = Vector2(-2, -15)
+		animation_player.play("sliding")
+		
+	#print(player_controller.direction)
+	
 	

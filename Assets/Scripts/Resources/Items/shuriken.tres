@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://bww730k8j2tsq"]
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://bww730k8j2tsq"]
 
 [ext_resource type="Script" uid="uid://cxrnfy2k1jxln" path="res://Assets/Scripts/Resources/inventory_item_resource.gd" id="1_lwf6d"]
-[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Sprites/Weapons/shuriken.png" id="2_3nrwd"]
-[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Sprites/Weapons/shuriken_in_hand.png" id="3_bs24p"]
+[ext_resource type="Texture2D" uid="uid://vnrwrotcv3r2" path="res://Assets/Assets/Weapons/shuriken.png" id="2_3nrwd"]
+[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Assets/Weapons/shuriken_in_hand.png" id="3_bs24p"]
 
 [resource]
 script = ExtResource("1_lwf6d")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://p8x5mvmchu1o"]
+[gd_scene format=3 uid="uid://p8x5mvmchu1o"]
 
 [ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/Items/Base Item/item_base.tscn" id="1_cfxsi"]
-[ext_resource type="Texture2D" uid="uid://byj37ac8j33y8" path="res://Assets/Sprites/Weapons/heavy-sword.png" id="2_sjoaf"]
+[ext_resource type="Texture2D" uid="uid://byj37ac8j33y8" path="res://Assets/Assets/Weapons/heavy-sword.png" id="2_sjoaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7wf6"]
 radius = 8.0

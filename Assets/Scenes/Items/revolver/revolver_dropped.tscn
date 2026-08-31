@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0figm02vfojt"]
+[gd_scene format=3 uid="uid://b0figm02vfojt"]
 
 [ext_resource type="PackedScene" uid="uid://bq8361w7ffovl" path="res://Assets/Scenes/Items/Base Item/item_base.tscn" id="1_64sub"]
 [ext_resource type="Script" uid="uid://cc3h4xwl84kkq" path="res://Assets/Scripts/inventory/items/revolver/revolver_dropped.gd" id="2_ilibk"]
-[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Sprites/Weapons/revolver.png" id="2_tpl5i"]
+[ext_resource type="Texture2D" uid="uid://c6lfx7dqovdwb" path="res://Assets/Assets/Weapons/revolver.png" id="2_tpl5i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xk64o"]
 radius = 7.0

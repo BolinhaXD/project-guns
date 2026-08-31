@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://8ldyblmi2ood"]
+[gd_scene format=3 uid="uid://8ldyblmi2ood"]
 
 [ext_resource type="PackedScene" uid="uid://qi7wwbyqofu7" path="res://Assets/Scenes/Items/Base Item/item_in_hand.tscn" id="1_q6xdu"]
 [ext_resource type="Script" uid="uid://642i8xw4cjux" path="res://Assets/Scripts/inventory/items/revolver/revolver.gd" id="2_w8gqq"]
-[ext_resource type="Texture2D" uid="uid://cak0vqms3tw2l" path="res://Assets/Sprites/Weapons/revolver_in_hand.png" id="3_tddbp"]
+[ext_resource type="Texture2D" uid="uid://cak0vqms3tw2l" path="res://Assets/Assets/Weapons/revolver_in_hand.png" id="3_tddbp"]
 
 [node name="revoler in hand" instance=ExtResource("1_q6xdu")]
 script = ExtResource("2_w8gqq")

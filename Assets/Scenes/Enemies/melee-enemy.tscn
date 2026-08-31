@@ -1,11 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0g2ej26skfu7"]
+[gd_scene format=3 uid="uid://d0g2ej26skfu7"]
 
 [ext_resource type="Script" uid="uid://dsr82a12oysqc" path="res://Assets/Scripts/Enemies/melee_enemy_controller.gd" id="1_xmd1x"]
-[ext_resource type="Texture2D" uid="uid://bpdanmkx1fiet" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-attack.png" id="2_d5f16"]
+[ext_resource type="Texture2D" uid="uid://bpdanmkx1fiet" path="res://Assets/Assets/enemies/Enemy1/enemy-v1-attack.png" id="2_d5f16"]
 [ext_resource type="Script" uid="uid://csnmkhnlxxkf5" path="res://Assets/Scripts/Enemies/melee_enemy_animator.gd" id="2_ryfu3"]
-[ext_resource type="Texture2D" uid="uid://ui0symxx1rar" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-idle-and-blink.png" id="3_ryfu3"]
-[ext_resource type="Texture2D" uid="uid://cs52s20hqim2x" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-death.png" id="5_xmd1x"]
-[ext_resource type="Texture2D" uid="uid://doplgq8lqx7fm" path="res://Assets/Sprites/enemies/Enemy1/enemy-v1-walk.png" id="6_mmwwh"]
+[ext_resource type="Texture2D" uid="uid://ui0symxx1rar" path="res://Assets/Assets/enemies/Enemy1/enemy-v1-idle-and-blink.png" id="3_ryfu3"]
+[ext_resource type="Texture2D" uid="uid://cs52s20hqim2x" path="res://Assets/Assets/enemies/Enemy1/enemy-v1-death.png" id="5_xmd1x"]
+[ext_resource type="Texture2D" uid="uid://doplgq8lqx7fm" path="res://Assets/Assets/enemies/Enemy1/enemy-v1-walk.png" id="6_mmwwh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmd1x"]
 atlas = ExtResource("2_d5f16")

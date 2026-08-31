@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dhrd8kdi8h3lv"]
 
 [ext_resource type="Script" uid="uid://bxdkpfi6lnyvu" path="res://Assets/Scripts/Menu/level_menu.gd" id="1_c66al"]
-[ext_resource type="Texture2D" uid="uid://bqt6cnto8yuqk" path="res://Assets/Sprites/Menu/main-menu-background.png" id="1_xqkco"]
-[ext_resource type="FontFile" uid="uid://kqb4pqkfgqpx" path="res://Assets/Sprites/UI/AeogoPixellated-DYYEd.ttf" id="2_sd213"]
-[ext_resource type="Texture2D" uid="uid://c16o0xu0drxl6" path="res://Assets/Sprites/Menu/start-button.png" id="5_assq6"]
-[ext_resource type="Texture2D" uid="uid://b0kqalw8e5cm7" path="res://Assets/Sprites/Menu/options-button.png" id="7_a1wyl"]
-[ext_resource type="Texture2D" uid="uid://teb4shh4cvwj" path="res://Assets/Sprites/Menu/area-1.png" id="10_2it0w"]
-[ext_resource type="Texture2D" uid="uid://bnuudtaie7uda" path="res://Assets/Sprites/Menu/area-2.png" id="11_na4y5"]
+[ext_resource type="Texture2D" uid="uid://bqt6cnto8yuqk" path="res://Assets/Assets/Menu/main-menu-background.png" id="1_xqkco"]
+[ext_resource type="FontFile" uid="uid://kqb4pqkfgqpx" path="res://Assets/Assets/UI/AeogoPixellated-DYYEd.ttf" id="2_sd213"]
+[ext_resource type="Texture2D" uid="uid://c16o0xu0drxl6" path="res://Assets/Assets/Menu/start-button.png" id="5_assq6"]
+[ext_resource type="Texture2D" uid="uid://b0kqalw8e5cm7" path="res://Assets/Assets/Menu/options-button.png" id="7_a1wyl"]
+[ext_resource type="Texture2D" uid="uid://teb4shh4cvwj" path="res://Assets/Assets/Menu/area-1.png" id="10_2it0w"]
+[ext_resource type="Texture2D" uid="uid://bnuudtaie7uda" path="res://Assets/Assets/Menu/area-2.png" id="11_na4y5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2nmct"]
 texture = ExtResource("1_xqkco")

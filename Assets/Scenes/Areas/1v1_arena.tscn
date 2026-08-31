@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://ctbg36vjrgjbm"]
 
-[ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Sprites/Levels/Blue brick wall.png" id="1_k2mrj"]
+[ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Assets/Levels/Blue brick wall.png" id="1_k2mrj"]
 [ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/Player/player.tscn" id="2_sojj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sojj0"]
@@ -69,4 +69,4 @@ tile_map_data = PackedByteArray("AAD3//r/AAAAAAAAAAD4//r/AAAAAAAAAAD5//r/AAAAAAA
 tile_set = SubResource("TileSet_3x2nh")
 
 [node name="Player" parent="." unique_id=147207229 instance=ExtResource("2_sojj0")]
-position = Vector2(-226, -1)
+position = Vector2(-1, -1)

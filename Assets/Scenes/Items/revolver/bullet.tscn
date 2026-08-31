@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhmtwv0ifqghy"]
+[gd_scene format=3 uid="uid://bhmtwv0ifqghy"]
 
 [ext_resource type="PackedScene" uid="uid://bvwr20w362q5k" path="res://Assets/Scenes/Items/Base Item/projectile_base_v2.tscn" id="1_ctqxa"]
-[ext_resource type="Texture2D" uid="uid://beufr1jx0jiy1" path="res://Assets/Sprites/Weapons/bullet.png" id="2_1xfrj"]
+[ext_resource type="Texture2D" uid="uid://beufr1jx0jiy1" path="res://Assets/Assets/Weapons/bullet.png" id="2_1xfrj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oe6ix"]
 radius = 4.0

@@ -27,9 +27,9 @@ ItemDataBase="*res://Assets/Scenes/item_database.tscn"
 [file_customization]
 
 folder_colors={
+"res://Assets/Assets/": "purple",
 "res://Assets/Scenes/": "green",
-"res://Assets/Scripts/": "red",
-"res://Assets/Sprites/": "purple"
+"res://Assets/Scripts/": "red"
 }
 
 [global_group]

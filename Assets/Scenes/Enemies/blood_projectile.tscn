@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://y3og76jhka4r"]
+[gd_scene format=3 uid="uid://y3og76jhka4r"]
 
 [ext_resource type="Script" uid="uid://cp1xrkhecsds1" path="res://Assets/Scripts/Enemies/blood_projectile.gd" id="1_od113"]
-[ext_resource type="Texture2D" uid="uid://c0kr6yu15mxny" path="res://Assets/Sprites/enemies/ShootingEnemy1/blood-bullet.png" id="2_od113"]
+[ext_resource type="Texture2D" uid="uid://c0kr6yu15mxny" path="res://Assets/Assets/enemies/ShootingEnemy1/blood-bullet.png" id="2_od113"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_od113"]
 atlas = ExtResource("2_od113")

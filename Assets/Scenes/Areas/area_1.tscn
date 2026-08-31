@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://cqfhwa1xlyt07"]
+[gd_scene format=4 uid="uid://cqfhwa1xlyt07"]
 
-[ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Sprites/Levels/Blue brick wall.png" id="1_uidp5"]
+[ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Assets/Levels/Blue brick wall.png" id="1_uidp5"]
 [ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/Player/player.tscn" id="2_3uyhe"]
 [ext_resource type="PackedScene" uid="uid://25yi5gvsfuab" path="res://Assets/Scenes/candy.tscn" id="3_8wi1m"]
 [ext_resource type="PackedScene" uid="uid://bp8040opy7sm3" path="res://Assets/Scenes/Items/shuriken/shuriken_dropped.tscn" id="5_7fk0h"]
@@ -49,45 +49,45 @@ texture = ExtResource("1_uidp5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3uyhe")
 
-[node name="Area1" type="Node2D"]
+[node name="Area1" type="Node2D" unique_id=1466498934]
 
-[node name="Layer0" type="TileMapLayer" parent="." groups=["Ground"]]
+[node name="Layer0" type="TileMapLayer" parent="." unique_id=1799659447 groups=["Ground"]]
 use_parent_material = true
 position = Vector2(64, 0)
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD+/wAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAD4/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAD0/wAAAAAAAAAAAADz/wAAAAAAAAAAAADy/wAAAAAAAAAAAADx/wAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAD7/wAAAAAAAAAAAADw/wAAAAAAAAAAAADv/wAAAAAAAAAAAADu/wAAAAAAAAAAAADt/wAAAAAAAAAAAADs/wAAAAAAAAAAAADr/wAAAAAAAAAAAADq/wAAAAAAAAAAAADp/wAAAAAAAAAAAADo/wAAAAAAAAAAAADn/wAAAAAAAAAAAADm/wAAAAAAAAAAAADl/wAAAAAAAAAAAADk/wAAAAAAAAAAAADj/wAAAAAAAAAAAADi/wAAAAAAAAAAAADh/wAAAAAAAAAAAADg/wAAAAAAAAAAAADg////AAACAAEAAADg//7/AAACAAEAAADg//3/AAACAAEAAADs////AAAAAAAAAADv////AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_8wi1m")
 
-[node name="Player" parent="." instance=ExtResource("2_3uyhe")]
+[node name="Player" parent="." unique_id=1896120009 instance=ExtResource("2_3uyhe")]
 position = Vector2(-280, -14)
 
-[node name="Candy group" type="Node" parent="."]
+[node name="Candy group" type="Node" parent="." unique_id=2002669106]
 
-[node name="AnimatedSprite2D" parent="Candy group" instance=ExtResource("3_8wi1m")]
+[node name="AnimatedSprite2D" parent="Candy group" unique_id=1710467975 instance=ExtResource("3_8wi1m")]
 position = Vector2(43, -35)
 
-[node name="AnimatedSprite2D2" parent="Candy group" instance=ExtResource("3_8wi1m")]
+[node name="AnimatedSprite2D2" parent="Candy group" unique_id=618227192 instance=ExtResource("3_8wi1m")]
 position = Vector2(25, -17)
 
-[node name="AnimatedSprite2D3" parent="Candy group" instance=ExtResource("3_8wi1m")]
+[node name="AnimatedSprite2D3" parent="Candy group" unique_id=1814457801 instance=ExtResource("3_8wi1m")]
 position = Vector2(43, -17)
 
-[node name="AnimatedSprite2D4" parent="Candy group" instance=ExtResource("3_8wi1m")]
+[node name="AnimatedSprite2D4" parent="Candy group" unique_id=492687976 instance=ExtResource("3_8wi1m")]
 position = Vector2(61, -17)
 
-[node name="Weapons" type="Node" parent="."]
+[node name="Weapons" type="Node" parent="." unique_id=393857499]
 
-[node name="Revolver" parent="Weapons" instance=ExtResource("9_0ufq0")]
+[node name="Revolver" parent="Weapons" unique_id=2037088130 instance=ExtResource("9_0ufq0")]
 position = Vector2(-355.5, -15.5)
 
-[node name="Shuriken" parent="Weapons" instance=ExtResource("5_7fk0h")]
+[node name="Shuriken" parent="Weapons" unique_id=326871238 instance=ExtResource("5_7fk0h")]
 position = Vector2(-400.5, -18.5)
 
-[node name="Heavy Sword" parent="Weapons" instance=ExtResource("6_f20k6")]
+[node name="Heavy Sword" parent="Weapons" unique_id=961683897 instance=ExtResource("6_f20k6")]
 position = Vector2(-312, -25)
 script = ExtResource("7_0ufq0")
 
-[node name="Melee" parent="." instance=ExtResource("6_nlyig")]
+[node name="Melee" parent="." unique_id=2021943324 instance=ExtResource("6_nlyig")]
 position = Vector2(-223, 0)
 
-[node name="Shooting Alien Enemy" parent="." instance=ExtResource("7_msn23")]
+[node name="Shooting Alien Enemy" parent="." unique_id=381123732 instance=ExtResource("7_msn23")]
 position = Vector2(-175, 0)

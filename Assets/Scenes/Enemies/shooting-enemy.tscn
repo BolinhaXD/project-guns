@@ -1,10 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctcrmtra3ijwi"]
+[gd_scene format=3 uid="uid://ctcrmtra3ijwi"]
 
 [ext_resource type="Script" uid="uid://bfspcrf08yi8e" path="res://Assets/Scripts/Enemies/shooting_enemy_controller.gd" id="1_rp0qi"]
 [ext_resource type="Script" uid="uid://btg8r8j2d2tge" path="res://Assets/Scripts/Enemies/shooting_enemy_animator.gd" id="2_gon3e"]
-[ext_resource type="Texture2D" uid="uid://bc4dtcpfo5j13" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-walk.png" id="5_4dcov"]
-[ext_resource type="Texture2D" uid="uid://c3a3l37dxdfy6" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-dead.png" id="5_mqmsn"]
-[ext_resource type="Texture2D" uid="uid://nuguep58xoxj" path="res://Assets/Sprites/enemies/ShootingEnemy1/shooting-enemy-v1-idle.png" id="6_w1djk"]
+[ext_resource type="Texture2D" uid="uid://bc4dtcpfo5j13" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-walk.png" id="5_4dcov"]
+[ext_resource type="Texture2D" uid="uid://c3a3l37dxdfy6" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-dead.png" id="5_mqmsn"]
+[ext_resource type="Texture2D" uid="uid://nuguep58xoxj" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-idle.png" id="6_w1djk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dcov"]
 atlas = ExtResource("5_mqmsn")

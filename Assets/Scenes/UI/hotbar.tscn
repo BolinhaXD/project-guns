@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rhk5ciyows3o"]
+[gd_scene format=3 uid="uid://rhk5ciyows3o"]
 
 [ext_resource type="Script" uid="uid://ey8xmkoahjdr" path="res://Assets/Scripts/inventory/hotbar.gd" id="1_0tiwt"]
-[ext_resource type="Texture2D" uid="uid://bc3rgf774jkfs" path="res://Assets/Sprites/UI/hotbar-selection.png" id="1_44efm"]
+[ext_resource type="Texture2D" uid="uid://bc3rgf774jkfs" path="res://Assets/Assets/UI/hotbar-selection.png" id="1_44efm"]
 [ext_resource type="Script" uid="uid://y4xl4w81t2ad" path="res://Assets/Scripts/inventory/hotbar_box_container.gd" id="2_44efm"]
 [ext_resource type="PackedScene" uid="uid://06k5qbhvg0st" path="res://Assets/Scenes/UI/slot_gui.tscn" id="2_fck02"]
 

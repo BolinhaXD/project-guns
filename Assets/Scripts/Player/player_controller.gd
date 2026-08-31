@@ -19,10 +19,13 @@ class_name PlayerController extends CharacterBody2D
 var speed_multiplier = 30.0
 
 ## Multiplier applied to the jump
-var jump_multiplier = -30.0
+var jump_multiplier = -25.0
 
 ## Multiplier applied to the jump
-var wall_jump_multiplier = -20.0
+var wall_jump_multiplier = 25.0
+
+## Gravity applied to the jump
+var wall_gravity = 200.0
 
 ## Direction of the player (-1: left, 1: right)
 var direction = 0
@@ -34,8 +37,13 @@ var leap_count = 0
 ## Wall jump helpers
 var wall_jump: Vector2 = Vector2.ZERO
 var wall_jump_timer: float = 0.0 
+
+## On the right wall, jumping to the left
 var right_wall_jump_direction: Vector2 = Vector2(-1,-1)
+
+## On the left wall, jumping to the right
 var left_wall_jump_direction: Vector2 = Vector2(1,-1)
+
 var was_on_wall_last_frame = false
 
 ## Inventory of the player (its own class)
@@ -65,6 +73,7 @@ func _physics_process(delta: float) -> void:
 			#can_leap = false
 	
 	if wall_jump_timer > 0.0:
+		wall_jump.x -= delta * wall_jump.x
 		velocity = wall_jump
 		wall_jump_timer -= delta
 		if wall_jump_timer <= 0.0:
@@ -76,10 +85,10 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = jump_power * jump_multiplier * 1.5
 		if is_on_wall_only() and can_leap:
-			if get_wall_normal().x > 0:
-				apply_wall_jump(left_wall_jump_direction, 0.24)
-			else:
-				apply_wall_jump(right_wall_jump_direction, 0.24) 
+			if Input.is_action_pressed("move_left"):
+				apply_wall_jump(left_wall_jump_direction, 0.2)
+			if Input.is_action_pressed("move_right"):
+				apply_wall_jump(right_wall_jump_direction, 0.2) 
 		
 	# Handle pickup item (E)
 	## Emits the signal and makes the inventory pick up the item
@@ -122,7 +131,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * speed * speed_multiplier
+		velocity.x = direction * speed * speed_multiplier + (wall_jump.x)
 		if is_on_wall_only():
 			if direction == normalized_wall(get_wall_normal()):
 				velocity.y = velocity.y / 2
@@ -186,7 +195,13 @@ func normalized_wall(normal: Vector2):
 	else: return -1.0
 
 func apply_wall_jump(direction_vec: Vector2, wall_jump_duration: float) -> void:
-	wall_jump = direction_vec * jump_power * (-jump_multiplier) * 1.5
+	wall_jump = direction_vec * jump_power * wall_jump_multiplier * 1.5
+	#if direction_vec.x > 0:
+		#wall_jump.x -= 50
+	#else:
+		#wall_jump.x += 50
+	wall_jump.y += 100
+	print(wall_jump)
 	wall_jump_timer = wall_jump_duration
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs5p4tg1tcstk"]
+[gd_scene format=3 uid="uid://cs5p4tg1tcstk"]
 
 [ext_resource type="PackedScene" uid="uid://qi7wwbyqofu7" path="res://Assets/Scenes/Items/Base Item/item_in_hand.tscn" id="1_s8qki"]
 [ext_resource type="Script" uid="uid://dlnqb2d7tlmcq" path="res://Assets/Scripts/inventory/items/shuriken/shuriken.gd" id="2_lor0s"]
-[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Sprites/Weapons/shuriken_in_hand.png" id="3_pgtyg"]
+[ext_resource type="Texture2D" uid="uid://dwv2j2h2k2yv3" path="res://Assets/Assets/Weapons/shuriken_in_hand.png" id="3_pgtyg"]
 
 [node name="shuriken in hand" instance=ExtResource("1_s8qki")]
 script = ExtResource("2_lor0s")

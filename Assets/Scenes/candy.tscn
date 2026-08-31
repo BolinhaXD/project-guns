@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://25yi5gvsfuab"]
+[gd_scene format=3 uid="uid://25yi5gvsfuab"]
 
-[ext_resource type="Texture2D" uid="uid://du10runh8ovii" path="res://Assets/Sprites/Levels/candy coin.png" id="1_duvtk"]
+[ext_resource type="Texture2D" uid="uid://du10runh8ovii" path="res://Assets/Assets/Levels/candy coin.png" id="1_duvtk"]
 [ext_resource type="Script" uid="uid://boas7dx420dic" path="res://Assets/Scripts/candy.gd" id="2_pco27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pco27"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://fmxwsa2ew0he"]
+
+[ext_resource type="Script" uid="uid://clj006npek7xe" path="res://Assets/Scripts/audio_controller.gd" id="1_pq86c"]
+[ext_resource type="AudioStream" uid="uid://cedkahkbm3hbo" path="res://Assets/Assets/Player/Level Musics/Week 22 - The Walking Dunes UNBLINKING SUN.ogg" id="2_lgg6c"]
+[ext_resource type="AudioStream" uid="uid://dij0ewcuifoyb" path="res://Assets/Assets/Player/NA_Character Footsteps (Dirt & Grass) - Pack 1/Jump/Dirt/Post Jump 6.wav" id="3_a4tqx"]
+[ext_resource type="AudioStream" uid="uid://b0b3c400jveaw" path="res://Assets/Assets/Player/Chords/Classic UI SFX(Click) - Chords #17.wav" id="3_lgg6c"]
+[ext_resource type="AudioStream" uid="uid://xd7vp5dypc6s" path="res://Assets/Assets/Player/Retro Impact Punch Hurt 01.wav" id="5_a4tqx"]
+
+[node name="Audio Controller" type="Node2D" unique_id=2076434757]
+script = ExtResource("1_pq86c")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1425807859]
+stream = ExtResource("2_lgg6c")
+volume_db = -20.0
+
+[node name="ClickUIButton" type="AudioStreamPlayer2D" parent="." unique_id=1263532220]
+stream = ExtResource("3_lgg6c")
+volume_db = 5.0
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=545181891]
+stream = ExtResource("3_a4tqx")
+
+[node name="End" type="AudioStreamPlayer2D" parent="." unique_id=635549756]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="." unique_id=1594772581]
+stream = ExtResource("5_a4tqx")

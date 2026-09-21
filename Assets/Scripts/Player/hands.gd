@@ -34,9 +34,10 @@ func _process(_delta: float) -> void:
 
 ## Function resposible for updating the hand sprite depending on what happened (got switch, dropped, pickep up)
 func update(_type: String = "none"):
-	if get_child(2) != null:
-		get_child(2).queue_free()
-		remove_child(get_child(2))
+	if get_child_count() > 2:
+		var old_item = get_child(2)
+		remove_child(old_item)
+		old_item.queue_free()
 	
 	# Has a weapon equipped
 	if inventory.current_selected_item != null:
@@ -44,7 +45,6 @@ func update(_type: String = "none"):
 		# Create the item in hand
 		var msg = "res://Assets/Scenes/Items/" + inventory.current_selected_item.name + "/" + inventory.current_selected_item.name + "_in_hand.tscn"
 		var item_load = load(msg)
-		print(msg)
 		var item_instance = item_load.instantiate()
 		item_instance.player_controller = player_controller
 		item_instance.hands_area = area

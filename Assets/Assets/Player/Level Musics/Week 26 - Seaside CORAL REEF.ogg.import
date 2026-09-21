@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bjyu0fk8eq6vs"
+path="res://.godot/imported/Week 26 - Seaside CORAL REEF.ogg-1be350458e5ead012de42322a1973e0f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/Level Musics/Week 26 - Seaside CORAL REEF.ogg"
+dest_files=["res://.godot/imported/Week 26 - Seaside CORAL REEF.ogg-1be350458e5ead012de42322a1973e0f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlllv00y00lmx"
+path="res://.godot/imported/GRASS - Crouch short 3.wav-38627578b50894d25d8f066e59ecfa47.sample"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/NA_Character Footsteps (Dirt & Grass) - Pack 1/Crouch/Grass/GRASS - Crouch short 3.wav"
+dest_files=["res://.godot/imported/GRASS - Crouch short 3.wav-38627578b50894d25d8f066e59ecfa47.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

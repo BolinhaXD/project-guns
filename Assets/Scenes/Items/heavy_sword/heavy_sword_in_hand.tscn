@@ -8,16 +8,16 @@
 radius = 7.0
 height = 44.0
 
-[node name="heavy sword in hand" instance=ExtResource("1_bhorc")]
+[node name="heavy sword in hand" unique_id=1379760033 instance=ExtResource("1_bhorc")]
 script = ExtResource("2_s2ta6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=710263474]
 position = Vector2(0, -16)
 texture = ExtResource("2_7amk7")
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="Area2D" type="Area2D" parent="." index="1" unique_id=812350243]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1444413951]
 position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_sbl56")
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0kr6yu15mxny"
-path="res://.godot/imported/blood-bullet.png-db27238d0ea31934d434308e47b27465.ctex"
+path="res://.godot/imported/blood-bullet.png-5b5aae9ad0d6f32cff96185477cbb85c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets/enemies/ShootingEnemy1/blood-bullet.png"
-dest_files=["res://.godot/imported/blood-bullet.png-db27238d0ea31934d434308e47b27465.ctex"]
+source_file="res://Assets/Assets/Enemies/ShootingEnemy1/blood-bullet.png"
+dest_files=["res://.godot/imported/blood-bullet.png-5b5aae9ad0d6f32cff96185477cbb85c.ctex"]
 
 [params]
 

@@ -12,11 +12,13 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Assets/Scenes/Areas/level_menu.tscn")
+	AudioController.play_click_ui_button()
+	get_tree().change_scene_to_file("res://Assets/Scenes/Areas/character_selection.tscn")
 	# get_tree().change_scene_to_file("res://Assets/Scenes/Areas/area_1.tscn")
 
 
 func _on_options_button_pressed() -> void:
+	AudioController.play_click_ui_button()
 	print("options scene")
 
 

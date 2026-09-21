@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cvjlktwev8sdh"]
+
+[ext_resource type="Script" uid="uid://i66p7mg6qqag" path="res://Assets/Scripts/Player/UI/health_bar.gd" id="1_p2cyl"]
+[ext_resource type="Texture2D" uid="uid://8ieu4pofjs6d" path="res://Assets/Assets/UI/health-bar-outline.png" id="2_txy4c"]
+[ext_resource type="Texture2D" uid="uid://js05sja8irsl" path="res://Assets/Assets/UI/health-bar-life-under.png" id="3_txy4c"]
+[ext_resource type="Texture2D" uid="uid://d2kt1uds21inq" path="res://Assets/Assets/UI/health-bar-life-progress.png" id="4_p2cyl"]
+
+[node name="Health Bar" type="Control" unique_id=328156439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p2cyl")
+
+[node name="Outside bar" type="TextureRect" parent="." unique_id=1926614310]
+layout_mode = 0
+offset_right = 77.0
+offset_bottom = 16.0
+texture = ExtResource("2_txy4c")
+stretch_mode = 2
+
+[node name="Life bar" type="TextureProgressBar" parent="." unique_id=624160238]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 74.0
+offset_bottom = 13.0
+value = 100.0
+texture_under = ExtResource("3_txy4c")
+texture_progress = ExtResource("4_p2cyl")

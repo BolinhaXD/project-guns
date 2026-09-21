@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterInfo" format=3 uid="uid://gop5ju022s8m"]
+
+[ext_resource type="Script" uid="uid://q0kwok0by01g" path="res://Assets/Scripts/Resources/character_info.gd" id="1_42ec7"]
+[ext_resource type="Texture2D" uid="uid://t8i2am8hxt2x" path="res://Assets/Assets/Player/CharacterSpriteSheets/bottle-spritesheet.png" id="2_j57vf"]
+
+[resource]
+script = ExtResource("1_42ec7")
+sprite_sheet = ExtResource("2_j57vf")
+health_points = 130.0
+metadata/_custom_type_script = "uid://q0kwok0by01g"

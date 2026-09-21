@@ -1,9 +1,10 @@
 ## Class responsible for the animation of the animation of the player
 extends Node2D
 
-@export var player_controller : PlayerController
-@export var animation_player : AnimationPlayer
+@export var player_controller: PlayerController
+@export var animation_player: AnimationPlayer
 @export var sprite: Sprite2D
+
 
 var current_place
 

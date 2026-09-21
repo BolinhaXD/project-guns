@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://sijix5qosry4"
+path="res://.godot/imported/Week 18 - Distant Skyline CITY LIGHTS.ogg-c9f5f2096a222962ec9f4a857e46bd44.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/Level Musics/Week 18 - Distant Skyline CITY LIGHTS.ogg"
+dest_files=["res://.godot/imported/Week 18 - Distant Skyline CITY LIGHTS.ogg-c9f5f2096a222962ec9f4a857e46bd44.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

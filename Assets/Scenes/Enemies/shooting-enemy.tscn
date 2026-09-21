@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bfspcrf08yi8e" path="res://Assets/Scripts/Enemies/shooting_enemy_controller.gd" id="1_rp0qi"]
 [ext_resource type="Script" uid="uid://btg8r8j2d2tge" path="res://Assets/Scripts/Enemies/shooting_enemy_animator.gd" id="2_gon3e"]
-[ext_resource type="Texture2D" uid="uid://bc4dtcpfo5j13" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-walk.png" id="5_4dcov"]
-[ext_resource type="Texture2D" uid="uid://c3a3l37dxdfy6" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-dead.png" id="5_mqmsn"]
-[ext_resource type="Texture2D" uid="uid://nuguep58xoxj" path="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-idle.png" id="6_w1djk"]
+[ext_resource type="Texture2D" uid="uid://bc4dtcpfo5j13" path="res://Assets/Assets/Enemies/ShootingEnemy1/shooting-enemy-v1-walk.png" id="5_4dcov"]
+[ext_resource type="Texture2D" uid="uid://c3a3l37dxdfy6" path="res://Assets/Assets/Enemies/ShootingEnemy1/shooting-enemy-v1-dead.png" id="5_mqmsn"]
+[ext_resource type="Texture2D" uid="uid://nuguep58xoxj" path="res://Assets/Assets/Enemies/ShootingEnemy1/shooting-enemy-v1-idle.png" id="6_w1djk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4dcov"]
 atlas = ExtResource("5_mqmsn")
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w1djk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"dead",
 "speed": 7.0
 }, {
@@ -141,7 +141,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qteru")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 6.0
 }, {
@@ -152,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_56dic")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -167,47 +167,47 @@ radius = 48.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkhp6"]
 radius = 60.0
 
-[node name="Shooting Alien Enemy" type="CharacterBody2D"]
+[node name="Shooting Alien Enemy" type="CharacterBody2D" unique_id=1763269325]
 script = ExtResource("1_rp0qi")
 
-[node name="Cooldown" type="Timer" parent="."]
+[node name="Cooldown" type="Timer" parent="." unique_id=892959813]
 wait_time = 0.7
 one_shot = true
 
-[node name="Agent Animation" type="Node2D" parent="." node_paths=PackedStringArray("enemy_controller", "animated_sprite")]
+[node name="Agent Animation" type="Node2D" parent="." unique_id=1149044762 node_paths=PackedStringArray("enemy_controller", "animated_sprite")]
 script = ExtResource("2_gon3e")
 enemy_controller = NodePath("..")
 animated_sprite = NodePath("AnimatedSprite2D")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Agent Animation"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Agent Animation" unique_id=277526212]
 position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_82s51")
-animation = &"dead"
+animation = &"idle"
 autoplay = "idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=508826194]
 position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_0ufq0")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1809377583]
 visible = false
 
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="Area2D" unique_id=124198590]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_4dcov")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1161704062]
 wait_time = 1.7999999999999998
 autostart = true
 
-[node name="Sight Range" type="Area2D" parent="."]
+[node name="Sight Range" type="Area2D" parent="." unique_id=1869547542]
 visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight Range"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sight Range" unique_id=267549232]
 position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_xkhp6")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1448173882]
 position = Vector2(11.5, -19.5)
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

@@ -6,14 +6,20 @@ class_name PlayerController extends CharacterBody2D
 ## UI of the player
 @onready var gui_scene = preload("res://Assets/Scenes/UI/gui.tscn")
 
+## Spritesheet of the character
+@onready var spritesheet: Sprite2D = $"Agent Animator/Sprite2D"
+
 ## Speed which the player walks
 @export var speed: float = 7.0
 
-## The force applied to the player to be able to jump
-@export var jump_power = 8.0
+## Information for the character (health, jump power, spritesheet, busto para UI (##TODO)
+@export var character_info : CharacterInfo
 
-## Health of the player
-@export var health_points: float = 100.0
+## Inventory of the player (its own class)
+@export var inventory: Inventory
+
+var camera2D: Camera2D
+var cameraShakeNoise: FastNoiseLite
 
 ## Multiplier applied to the movement
 var speed_multiplier = 30.0
@@ -30,7 +36,7 @@ var wall_gravity = 200.0
 ## Direction of the player (-1: left, 1: right)
 var direction = 0
 
-## Control if the player can leap in a wall
+## Control if the player can leap in a wall (not working yet)
 var can_leap = true
 var leap_count = 0
 
@@ -44,13 +50,11 @@ var right_wall_jump_direction: Vector2 = Vector2(-1,-1)
 ## On the left wall, jumping to the right
 var left_wall_jump_direction: Vector2 = Vector2(1,-1)
 
-var was_on_wall_last_frame = false
-
-## Inventory of the player (its own class)
-@export var inventory: Inventory
-
 ## Signal when an item is picked up
 signal picked_up
+
+## Signal when the player takes damage (to signal the health UI)
+signal take_damage_signal
 
 ## Array that controls the items that are on the ground possible to be picked up
 ## Makes an ordering of what can be picked up first
@@ -58,19 +62,14 @@ var possible_pickup_items: Array[Item]
 
 func _ready() -> void:
 	inventory.item_dropped.connect(drop_item)
-	pass
+	spritesheet.texture = character_info.sprite_sheet
+	camera2D = get_node("Camera2D")
+	cameraShakeNoise = FastNoiseLite.new()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	#if is_on_wall_only():
-		#if leap_count == 0:
-			#leap_count += 1
-		#else:
-			#leap_count == 0 
-			#can_leap = false
 	
 	if wall_jump_timer > 0.0:
 		wall_jump.x -= delta * wall_jump.x
@@ -79,16 +78,18 @@ func _physics_process(delta: float) -> void:
 		if wall_jump_timer <= 0.0:
 			wall_jump = Vector2.ZERO
 			
-	# Handle jump.
-	## 
+	# Handle jump (W or SPACE_BAR)
+	## can leap not working, its suposed to only jump once on the walls
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
-			velocity.y = jump_power * jump_multiplier * 1.5
+			velocity.y = character_info.jump_power * jump_multiplier * 1.5
+			AudioController.play_jump()
 		if is_on_wall_only() and can_leap:
 			if Input.is_action_pressed("move_left"):
 				apply_wall_jump(left_wall_jump_direction, 0.2)
 			if Input.is_action_pressed("move_right"):
 				apply_wall_jump(right_wall_jump_direction, 0.2) 
+			AudioController.play_jump()
 		
 	# Handle pickup item (E)
 	## Emits the signal and makes the inventory pick up the item
@@ -141,12 +142,31 @@ func _physics_process(delta: float) -> void:
 
 ## Makes the player take damage from diferent sources
 func take_damage(_damage):
-	if health_points > _damage:
-		health_points -= _damage
+	if character_info.health_points > _damage:
+		character_info.health_points -= _damage
+		take_damage_signal.emit(_damage)
+		AudioController.play_hurt()
+		
+		## Blinking effect
+		var tween = get_tree().create_tween()
+		tween.tween_method(SetShader_BlinkIntensity, 1.0, 0.0, 0.5)
+		
+		## Camera shake effect
+		var camera_tween = get_tree().create_tween()
+		camera_tween.tween_method(StartCameraShake, 2.0, 1.0, 0.5)
 	else:
-		health_points = 0
+		character_info.health_points = 0
 		dead()
-	print("Health: ", health_points)
+		
+## Sets new shader
+func SetShader_BlinkIntensity(newValue: float):
+	spritesheet.material.set_shader_parameter("blink_intensity", newValue)
+
+## Shakes the camera
+func StartCameraShake(intensity: float):
+	var cameraOffSet = cameraShakeNoise.get_noise_1d(Time.get_ticks_msec()) * intensity
+	camera2D.offset.x = cameraOffSet ## Nothing added because the x is o
+	camera2D.offset.y = -25 + cameraOffSet ## -25 is the camera offset, its needed to add for it to work
 
 ## Makes the player die (still in development)
 func dead():
@@ -195,18 +215,6 @@ func normalized_wall(normal: Vector2):
 	else: return -1.0
 
 func apply_wall_jump(direction_vec: Vector2, wall_jump_duration: float) -> void:
-	wall_jump = direction_vec * jump_power * wall_jump_multiplier * 1.5
-	#if direction_vec.x > 0:
-		#wall_jump.x -= 50
-	#else:
-		#wall_jump.x += 50
+	wall_jump = direction_vec * character_info.jump_power * wall_jump_multiplier * 1.5
 	wall_jump.y += 100
-	print(wall_jump)
 	wall_jump_timer = wall_jump_duration
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Ground"):
-		if is_on_wall() and not is_on_floor() and not is_on_ceiling():
-			was_on_wall_last_frame = true
-		else:
-			was_on_wall_last_frame = false

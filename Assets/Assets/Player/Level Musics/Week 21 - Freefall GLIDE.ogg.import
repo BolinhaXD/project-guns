@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dchxnl263ldrj"
+path="res://.godot/imported/Week 21 - Freefall GLIDE.ogg-9c47d944be16a722bb1224339dbd8940.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/Level Musics/Week 21 - Freefall GLIDE.ogg"
+dest_files=["res://.godot/imported/Week 21 - Freefall GLIDE.ogg-9c47d944be16a722bb1224339dbd8940.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

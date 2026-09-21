@@ -1,7 +1,7 @@
 extends Node2D
 class_name ProjectileBase
 
-@onready var sprite2d: Sprite2D = $Sprite2D
+@onready var sprite2d: Node2D = $Sprite2D
 @onready var area2d: Area2D = $Area2D
 var SPEED: int = 300 
 var damage: int

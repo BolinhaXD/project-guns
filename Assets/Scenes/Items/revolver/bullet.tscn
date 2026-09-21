@@ -7,7 +7,7 @@
 radius = 4.0
 height = 16.0
 
-[node name="Node2D" instance=ExtResource("1_ctqxa")]
+[node name="Node2D" unique_id=1059816521 instance=ExtResource("1_ctqxa")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_1xfrj")

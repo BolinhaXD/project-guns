@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://chwce80xn8kos"
+path="res://.godot/imported/Week 18 - Distant Skyline SIDEWALK STRUT.ogg-1b559dcc7d64a6b320ea4578ba1d0264.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/Level Musics/Week 18 - Distant Skyline SIDEWALK STRUT.ogg"
+dest_files=["res://.godot/imported/Week 18 - Distant Skyline SIDEWALK STRUT.ogg-1b559dcc7d64a6b320ea4578ba1d0264.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

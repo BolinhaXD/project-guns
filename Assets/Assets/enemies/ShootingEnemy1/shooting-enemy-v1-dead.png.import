@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3a3l37dxdfy6"
-path="res://.godot/imported/shooting-enemy-v1-dead.png-0b607f3eb12f516644f2d50a4e87aefc.ctex"
+path="res://.godot/imported/shooting-enemy-v1-dead.png-876eefa51b0c8d5e5f4bef68fcd5628d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-dead.png"
-dest_files=["res://.godot/imported/shooting-enemy-v1-dead.png-0b607f3eb12f516644f2d50a4e87aefc.ctex"]
+source_file="res://Assets/Assets/Enemies/ShootingEnemy1/shooting-enemy-v1-dead.png"
+dest_files=["res://.godot/imported/shooting-enemy-v1-dead.png-876eefa51b0c8d5e5f4bef68fcd5628d.ctex"]
 
 [params]
 

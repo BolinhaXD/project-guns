@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://ctbg36vjrgjbm"]
 
+[ext_resource type="Script" uid="uid://bbfb810edtmjh" path="res://Assets/Scripts/Arenas/1v_1_arena.gd" id="1_3x2nh"]
 [ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Assets/Levels/Blue brick wall.png" id="1_k2mrj"]
-[ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/Player/player.tscn" id="2_sojj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sojj0"]
 texture = ExtResource("1_k2mrj")
@@ -43,6 +43,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_sojj0")
 
 [node name="1v1Arena" type="Node2D" unique_id=432637595]
+script = ExtResource("1_3x2nh")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1104839094 groups=["Ground"]]
 use_parent_material = true
@@ -67,6 +68,3 @@ use_parent_material = true
 position = Vector2(64, 0)
 tile_map_data = PackedByteArray("AAD3//r/AAAAAAAAAAD4//r/AAAAAAAAAAD5//r/AAAAAAAAAAD6//r/AAAAAAAAAAD7//r/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAADv//3/AAAAAAAAAADw//3/AAAAAAAAAADx//3/AAAAAAAAAADy//3/AAAAAAAAAADz//3/AAAAAAAAAAD0//3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP3/AAAAAAAAAAAOAPb/AAAAAAAAAAANAPb/AAAAAAAAAAAMAPb/AAAAAAAAAAALAPb/AAAAAAAAAAAKAPb/AAAAAAAAAAAJAPb/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3x2nh")
-
-[node name="Player" parent="." unique_id=147207229 instance=ExtResource("2_sojj0")]
-position = Vector2(-1, -1)

@@ -16,13 +16,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="project-guns"
 run/main_scene="uid://bhwua8rhc01m6"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Assets/Scenes/game_manager.tscn"
 ItemDataBase="*res://Assets/Scenes/item_database.tscn"
+AudioController="*uid://fmxwsa2ew0he"
 
 [file_customization]
 

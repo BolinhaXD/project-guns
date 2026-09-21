@@ -1,24 +1,21 @@
 [gd_scene format=3 uid="uid://kenpl48l7u7o"]
 
 [ext_resource type="PackedScene" uid="uid://rhk5ciyows3o" path="res://Assets/Scenes/UI/hotbar.tscn" id="1_5kaq3"]
+[ext_resource type="PackedScene" uid="uid://cvjlktwev8sdh" path="res://Assets/Scenes/UI/health_bar.tscn" id="1_orcuk"]
+[ext_resource type="Script" uid="uid://dur7gqwvprbw7" path="res://Assets/Scripts/Player/UI/gui.gd" id="1_wvmae"]
 
 [node name="GUI" type="CanvasLayer" unique_id=1428185443]
+script = ExtResource("1_wvmae")
+
+[node name="Health Bar" parent="." unique_id=328156439 instance=ExtResource("1_orcuk")]
+offset_left = 24.0
+offset_top = 21.0
+offset_right = -1051.0
+offset_bottom = -611.0
+scale = Vector2(4, 4)
 
 [node name="Hotbar" parent="." unique_id=1604156640 instance=ExtResource("1_5kaq3")]
 offset_left = 16.0
 offset_top = 280.0
 offset_right = 136.0
 offset_bottom = 632.0
-
-[node name="HealthBar" type="Control" parent="." unique_id=2008217761]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="HealthBar" unique_id=1632201466]
-
-[node name="Label" type="Label" parent="HealthBar" unique_id=1242991880]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0

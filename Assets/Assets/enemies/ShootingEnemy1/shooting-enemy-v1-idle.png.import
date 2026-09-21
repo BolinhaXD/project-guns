@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nuguep58xoxj"
-path="res://.godot/imported/shooting-enemy-v1-idle.png-4a89398db951ff1ea38a7a0e6f7fbeeb.ctex"
+path="res://.godot/imported/shooting-enemy-v1-idle.png-6fe3cf4e017d53d4f3d1db9a76c04611.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets/enemies/ShootingEnemy1/shooting-enemy-v1-idle.png"
-dest_files=["res://.godot/imported/shooting-enemy-v1-idle.png-4a89398db951ff1ea38a7a0e6f7fbeeb.ctex"]
+source_file="res://Assets/Assets/Enemies/ShootingEnemy1/shooting-enemy-v1-idle.png"
+dest_files=["res://.godot/imported/shooting-enemy-v1-idle.png-6fe3cf4e017d53d4f3d1db9a76c04611.ctex"]
 
 [params]
 

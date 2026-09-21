@@ -1,2 +1,17 @@
 Original ideia - Simple platformer, enemies, diferent weapons
 Next ideia - quick/fast paced 1v1, kinda like smash and drive ahead
+
+Revamp:
+	Menu layout (ainda ns como)
+	Character (pouco mudança)
+	Player(Ainda n tem vida)
+	Items (n tá mau mas ta confuso o uso com o player, items muito grandes)
+	Inimigos (o melee está mau, o outro pode sempre ser melhorado)
+	UI (tem de ser simplificada)
+	
+New:
+	Character selection - kinda done
+	Weapon selection 
+	Options
+	emotes (cada player tem o seu emote?)(butao expecifico para o emote H)
+	idle animations after not moving for a while

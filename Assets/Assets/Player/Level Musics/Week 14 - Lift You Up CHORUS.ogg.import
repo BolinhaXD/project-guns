@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://lp4mgrn0qhk6"
+path="res://.godot/imported/Week 14 - Lift You Up CHORUS.ogg-1e0882e6d7914c3cdf1e7cd4ddead533.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets/Player/Level Musics/Week 14 - Lift You Up CHORUS.ogg"
+dest_files=["res://.godot/imported/Week 14 - Lift You Up CHORUS.ogg-1e0882e6d7914c3cdf1e7cd4ddead533.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cqfhwa1xlyt07"]
 
+[ext_resource type="Script" uid="uid://dylqpky180dy8" path="res://Assets/Scripts/Arenas/area_1.gd" id="1_u1wc8"]
 [ext_resource type="Texture2D" uid="uid://dn58fycc3rsk6" path="res://Assets/Assets/Levels/Blue brick wall.png" id="1_uidp5"]
-[ext_resource type="PackedScene" uid="uid://rkugclrvmaee" path="res://Assets/Scenes/Player/player.tscn" id="2_3uyhe"]
 [ext_resource type="PackedScene" uid="uid://25yi5gvsfuab" path="res://Assets/Scenes/candy.tscn" id="3_8wi1m"]
 [ext_resource type="PackedScene" uid="uid://bp8040opy7sm3" path="res://Assets/Scenes/Items/shuriken/shuriken_dropped.tscn" id="5_7fk0h"]
 [ext_resource type="PackedScene" uid="uid://p8x5mvmchu1o" path="res://Assets/Scenes/Items/heavy_sword/heavy_sword_dropped.tscn" id="6_f20k6"]
@@ -50,15 +50,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_3uyhe")
 
 [node name="Area1" type="Node2D" unique_id=1466498934]
+script = ExtResource("1_u1wc8")
 
 [node name="Layer0" type="TileMapLayer" parent="." unique_id=1799659447 groups=["Ground"]]
 use_parent_material = true
 position = Vector2(64, 0)
 tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD+/wAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAFAP7/AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP//AAAAAAAAAAAGAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAAGAP3/AAAAAAAAAAAHAP3/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAEAP//AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAPv/AAAAAAAAAAAJAP3/AAAAAAAAAAAKAP3/AAAAAAAAAAD4/wAAAAAAAAAAAAD3/wAAAAAAAAAAAAD2/wAAAAAAAAAAAAD1/wAAAAAAAAAAAAD0/wAAAAAAAAAAAADz/wAAAAAAAAAAAADy/wAAAAAAAAAAAADx/wAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAD7/wAAAAAAAAAAAADw/wAAAAAAAAAAAADv/wAAAAAAAAAAAADu/wAAAAAAAAAAAADt/wAAAAAAAAAAAADs/wAAAAAAAAAAAADr/wAAAAAAAAAAAADq/wAAAAAAAAAAAADp/wAAAAAAAAAAAADo/wAAAAAAAAAAAADn/wAAAAAAAAAAAADm/wAAAAAAAAAAAADl/wAAAAAAAAAAAADk/wAAAAAAAAAAAADj/wAAAAAAAAAAAADi/wAAAAAAAAAAAADh/wAAAAAAAAAAAADg/wAAAAAAAAAAAADg////AAACAAEAAADg//7/AAACAAEAAADg//3/AAACAAEAAADs////AAAAAAAAAADv////AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_8wi1m")
-
-[node name="Player" parent="." unique_id=1896120009 instance=ExtResource("2_3uyhe")]
-position = Vector2(-280, -14)
 
 [node name="Candy group" type="Node" parent="." unique_id=2002669106]
 

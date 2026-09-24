@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ui0symxx1rar"
-path="res://.godot/imported/enemy-v1-idle-and-blink.png-8e237327c5a3f15d90d612e509036086.ctex"
+path="res://.godot/imported/enemy-v1-idle-and-blink.png-974ba7b21dc2b434f6c6a5f7512a2b2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets/Enemies/Enemy1/enemy-v1-idle-and-blink.png"
-dest_files=["res://.godot/imported/enemy-v1-idle-and-blink.png-8e237327c5a3f15d90d612e509036086.ctex"]
+source_file="res://Assets/Assets/enemies/Enemy1/enemy-v1-idle-and-blink.png"
+dest_files=["res://.godot/imported/enemy-v1-idle-and-blink.png-974ba7b21dc2b434f6c6a5f7512a2b2b.ctex"]
 
 [params]
 

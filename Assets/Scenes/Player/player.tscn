@@ -168,6 +168,27 @@ shader_parameter/blink_intensity = 0.0
 radius = 11.0
 height = 28.0
 
+[sub_resource type="Gradient" id="Gradient_j8jer"]
+offsets = PackedFloat32Array(0.00243309, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1e86u"]
+gradient = SubResource("Gradient_j8jer")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3qsgd"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector3(1, -0.5, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 700, 0)
+damping_min = 100.00001
+damping_max = 800.00006
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_1e86u")
+
 [node name="Player" type="CharacterBody2D" unique_id=2073885269 groups=["Player"]]
 script = ExtResource("1_7dd06")
 character_info = SubResource("Resource_mxepf")
@@ -241,6 +262,15 @@ player_controller = NodePath("..")
 position = Vector2(0, -33.000004)
 scale = Vector2(0.42803025, 0.3557692)
 texture = ExtResource("9_7h7ca")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1540213120]
+position = Vector2(0, -17)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3qsgd")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

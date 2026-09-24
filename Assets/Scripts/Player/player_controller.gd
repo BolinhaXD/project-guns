@@ -18,6 +18,8 @@ class_name PlayerController extends CharacterBody2D
 ## Inventory of the player (its own class)
 @export var inventory: Inventory
 
+@onready var damage_particle = $GPUParticles2D
+
 var camera2D: Camera2D
 var cameraShakeNoise: FastNoiseLite
 
@@ -154,6 +156,9 @@ func take_damage(_damage):
 		## Camera shake effect
 		var camera_tween = get_tree().create_tween()
 		camera_tween.tween_method(StartCameraShake, 2.0, 1.0, 0.5)
+		
+		damage_particle.restart()
+		damage_particle.emitting = true
 	else:
 		character_info.health_points = 0
 		dead()

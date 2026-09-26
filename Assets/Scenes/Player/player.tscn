@@ -180,13 +180,13 @@ lifetime_randomness = 1.0
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 20.0
-direction = Vector3(1, -0.5, 0)
+direction = Vector3(0, -100, 0)
 initial_velocity_min = 100.0
 initial_velocity_max = 200.0
 gravity = Vector3(0, 700, 0)
 damping_min = 100.00001
 damping_max = 800.00006
-scale_max = 2.0
+scale_min = 0.0
 color_ramp = SubResource("GradientTexture1D_1e86u")
 
 [node name="Player" type="CharacterBody2D" unique_id=2073885269 groups=["Player"]]
@@ -233,7 +233,6 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_7dd06")
 
 [node name="Hands" parent="." unique_id=124428238 node_paths=PackedStringArray("player_controller") instance=ExtResource("7_c3tg1")]
-visible = false
 z_index = 1
 position = Vector2(0, -15)
 player_controller = NodePath("..")
@@ -266,10 +265,12 @@ texture = ExtResource("9_7h7ca")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1540213120]
 position = Vector2(0, -17)
 emitting = false
-amount = 20
-lifetime = 0.5
+amount = 40
+lifetime = 0.7
 one_shot = true
 explosiveness = 1.0
+collision_base_size = 0.0
+visibility_rect = Rect2(-100, -100, 300, 300)
 process_material = SubResource("ParticleProcessMaterial_3qsgd")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
